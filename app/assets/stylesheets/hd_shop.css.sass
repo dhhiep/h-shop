@@ -1,0 +1,337 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,400italic,500italic,700,900,700italic,900italic&subset=latin,vietnamese)
+
+// Plugin config
+.bx-wrapper
+  margin-bottom: 20px
+  img
+    width: 100%
+  .bx-viewport
+    border: none
+    box-shadow: none
+    left: 0
+
+.bxslider
+  padding: 0
+  li
+    list-style: none
+    -webkit-transition: all 500ms
+    -moz-transition: all 500ms
+    transition: all 500ms
+
+.bx-pager
+  margin: 0 -10px
+  overflow: hidden
+  li
+    float: left
+    padding-left: 10px
+    padding-right: 10px
+    width: 20%
+
+.owl-carousel
+  .owl-item
+    display: inline-block
+    text-align: center
+    float: unset
+  .owl-wrapper-outer
+    .owl-wrapper
+      left: -2px !important
+.owl-theme
+  .owl-controls
+    .owl-buttons
+      .owl-prev
+        left: -27px
+      .owl-next
+        right: -27px
+      div
+        top: 42%
+        position: absolute
+        background: none
+        border-radius: 30px
+        color: black
+        display: inline-block
+        font-size: 30px
+        margin: 5px
+        opacity: 0.5
+        padding: 3px 10px
+
+// Elements CSS
+#main-slider
+  .item-caption
+    bottom: 0
+    height: 100%
+    left: 0
+    margin: auto
+    position: absolute
+    right: 0
+    width: 100%
+    color: white
+    text-align: center
+    text-transform: uppercase
+    background-color: rgba(0, 0, 0, 0.38)
+    *
+      -webkit-transition: all 500ms
+      -moz-transition: all 500ms
+      transition: all 500ms
+    .item-caption-inner
+      display: table
+      height: 100%
+      width: 100%
+      .item-caption-wrapper
+        display: table-cell
+        vertical-align: middle
+        .item-title
+          color: white
+          font-size: 46px
+          font-weight: 600
+          &:hover
+            cursor: pointer
+            text-decoration: none
+            color: #138EC6
+        .item-description
+          font-size: 5em
+          font-weight: 600
+          margin-bottom: 53px
+          margin-top: -15px
+        .shop-now
+          border: 3px solid white
+          color: white
+          cursor: pointer
+          font-size: 17px
+          font-weight: 700
+          padding: 8px
+          &:hover
+            background-color: #138ec6
+            border: 3px solid #138ec6
+            text-decoration: none
+
+.hr-title
+  font-size: 1.714em
+  font-weight: 700
+  margin: auto auto 22px
+  position: relative
+  text-align: center
+  text-transform: uppercase
+  width: 98%
+  &:after
+    border-top: 1px solid #dddddd
+    content: ""
+    left: 0
+    position: absolute
+    top: 50%
+    width: 100%
+    z-index: 1
+  span
+    background: none repeat scroll 0 0 white
+    padding: 0 40px
+    position: relative
+    z-index: 2
+
+#product-items
+  .owl-item
+    padding: 13px
+  .product-item
+    position: relative
+    overflow: hidden
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.28)
+    *
+      -webkit-transition: all 0.5s ease
+      -moz-transition: all 0.5s ease
+      -o-transition: all 0.5s ease
+      transition: all 0.5s ease
+    .black-layer
+      background-color: rgba(27, 67, 247, 0.10)
+      height: 100%
+      left: 0
+      position: absolute
+      top: 0
+      width: 100%
+      opacity: 0
+      z-index: 1
+    .product-image
+      img
+        width: 100%
+        height: 100%
+    .caption
+      background-color: rgba(255, 255, 255, 0.3)
+      bottom: 0
+      height: 39px
+      left: 0
+      padding: 5px 11px
+      position: absolute
+      text-align: left
+      width: 100%
+      .name
+        color: #c41d1d
+        font-size: 21px
+        font-weight: 500
+        text-shadow: 0 0 1px rgba(0, 0, 0, 0.56)
+        text-transform: uppercase
+        width: 100%
+      .description
+        letter-spacing: 1px
+        line-height: 23px
+    .price
+      color: #c41d1d
+      font-size: 20px
+      font-weight: bolder
+      position: absolute
+      right: 10px
+      top: 3px
+      z-index: 2
+    .nav-bar
+      display: block
+      position: absolute
+      text-align: center
+      top: 150%
+      width: 100%
+      z-index: 1
+      div
+        transform: rotate(100deg)
+        background-color: white
+        border-radius: 4px
+        box-shadow: 0 0 6px
+        display: inline-block
+        font-size: 22px
+        margin: auto
+        padding: 9px 17px
+        transition: all 1.4s ease 0s
+        vertical-align: middle
+        width: auto
+        -webkit-transition: all 0.9s ease
+        -moz-transition: all 0.9s ease
+        -o-transition: all 0.9s ease
+        transition: all 0.9s ease
+        &.add-to-cart
+          margin-left: 15px
+    &:hover
+      .black-layer
+        opacity: 1
+      .product-image
+        img
+          transform: scale(1.3)
+      .caption
+        background-color: rgba(255, 255, 255, 0.8)
+        height: 132px
+      .nav-bar
+        top: 40%
+        div
+          transform: rotate(0deg)
+
+// Layout
+body
+  padding: 0
+  margin: 0
+  font-family: 'Roboto', sans-serif
+
+#header
+  #main-menu
+    .navbar
+      margin-bottom: 0
+    .logo
+      height: 40px
+      margin-top: -11px
+    #search_form
+      position: relative
+      .form-group
+        width: 100%
+        input
+          width: 100%
+          padding-right: 30px
+      .search-logo
+        font-size: 18px
+        opacity: 0.7
+        position: absolute
+        right: 23px
+        top: 7px
+        cursor: pointer
+#main-content
+  background-color: white
+  margin: 33px auto auto
+  padding-bottom: 30px
+  width: 95%
+
+
+#list-products
+  margin-top: 80px
+  .line-product-item
+    .product-item
+      margin-top: 30px
+
+
+
+
+@media all and (max-width: 768px)
+  #main-slider
+    .item-caption
+      .item-caption-inner
+        .item-caption-wrapper
+          .item-title
+            font-size: 23px
+          .item-description
+            font-size: 40px
+            margin-bottom: 14px
+            margin-top: -12px
+          .shop-now
+            font-size: 13px
+  .owl-carousel
+    .owl-wrapper-outer
+      .owl-wrapper
+        left: -2px !important
+
+  .owl-theme
+    .owl-controls
+      .owl-buttons
+        .owl-prev
+          left: -20px
+        .owl-next
+          right: -20px
+  @media all and (max-width: 500px)
+    .hr-title
+      span
+        font-size: 20px
+    #main-slider
+      .item-caption
+        .item-caption-inner
+          .item-caption-wrapper
+            .item-title
+              font-size: 16px
+            .item-description
+              font-size: 21px
+              margin-bottom: 3px
+              margin-top: -3px
+            .shop-now
+              border: 2px solid
+              font-size: 10px
+              padding: 4px
+// Small devices (tablets, 768px and up)
+@media all and (min-width: 768px) and (max-width: 992px)
+  .owl-theme
+    .owl-controls
+      .owl-buttons
+        .owl-prev
+          left: -20px
+        .owl-next
+          right: -20px
+  #main-slider
+    .item-caption
+      .item-caption-inner
+        .item-caption-wrapper
+          .item-title
+            font-size: 33px
+          .item-description
+            font-size: 55px
+            margin-bottom: 24px
+            margin-top: -5px
+          .shop-now
+  .owl-carousel
+    .owl-wrapper-outer
+      .owl-wrapper
+        left: -2px !important
+// Medium devices (desktops, 992px and up)
+@media all and (min-width: 992px) and (max-width: 1200px)
+  .owl-carousel
+    .owl-wrapper-outer
+      .owl-wrapper
+        left: -2px !important
+// Large devices (large desktops, 1200px and up)
+@media all and (min-width: 1200px)

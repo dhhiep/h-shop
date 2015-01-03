@@ -1,10 +1,8 @@
 development:
+  project_name: "HD Shop"
   twilio_sid: ACecd8257fe52d8f218b5dc80dedab2438
   twilio_token: e46b00e192b803cacb19180ef1606b78
   twilio_from: '12674330908'
-  local_host: "http://192.168.0.111:3000"
-  free_pick_server: "http://192.168.0.111:3001"
-  spread_insiders_server: "http://192.168.0.111:3002"
   bucket: tsi-mails
   access_key_id: AKIAIKBT7MCMKLGKOEOQ
   secret_access_key: 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

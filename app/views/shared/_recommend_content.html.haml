@@ -1,0 +1,9 @@
+#recommend-product
+  .hr-title
+    %span
+      = fa_icon "star"
+      Sản phẩm nổi bật
+
+  #product-items.owl-carousel
+    - 20.times do
+      = render "shared/product"

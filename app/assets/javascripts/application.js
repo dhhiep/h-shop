@@ -11,16 +11,13 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
 //= require jquery_ujs
+//= require turbolinks
 //= require bootstrap-sprockets
 //= require bxslider
-//= require tinymce-jquery
-//= require moment
-//= require moment/vi.js
 //= require messenger
 //= require messenger-theme-flat
 //= require select2
-//= require select2_locale_vi
+//= require moment
 //= require_tree .
-//= require turbolinks
+
