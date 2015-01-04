@@ -1,17 +1,17 @@
-%div.product-item
+%div.product-item.wow.fadeInUp
+  .black-layer
+  .nav-bar
+    %a{:href => "/a"}
+      .external-link
+        = fa_icon "external-link"
+    %a{:href => "/b"}
+      .add-to-cart
+        = fa_icon "shopping-cart"
+  .product-image
+    = image_tag "products/product-#{rand(1..8)}.jpg", size: "240x240"
+  .price
+    = "#{ rand(100..999) }K"
   %a{:href => "#"}
-    .black-layer
-    .nav-bar
-      %a{:href => "/a"}
-        .external-link
-          = fa_icon "external-link"
-      %a{:href => "/b"}
-        .add-to-cart
-          = fa_icon "shopping-cart"
-    .product-image
-      = image_tag "products/product-#{rand(1..8)}.jpg", size: "240x240"
-    .price
-      = "#{ rand(100..999) }K"
     .caption
       .name
         = Faker::Name.name.humanize

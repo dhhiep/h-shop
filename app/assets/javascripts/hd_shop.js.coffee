@@ -21,3 +21,17 @@ $(document).ready ->
     scrollPerPage: true
     slideSpeed: 800
     stopOnHover: true
+
+  $("#scroll_to_top").click ->
+    $("#header").ScrollTo
+      duration: 1500
+      easing: 'easeInOutCirc'
+
+  wow = new WOW(
+    boxClass: "wow" # animated element css class (default is wow)
+    animateClass: "animated" # animation css class (default is animated)
+    offset: 0 # distance to the element when triggering the animation (default is 0)
+    mobile: true # trigger animations on mobile devices (default is true)
+    live: true # act on asynchronously loaded content (default is true)
+  )
+  wow.init()

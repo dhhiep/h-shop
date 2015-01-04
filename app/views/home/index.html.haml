@@ -4,4 +4,10 @@
     %span
       = fa_icon "list-ul"
       Danh sách sản phẩm
+  .btn-group.pull-right{"aria-label" => "...", :role => "group"}
+    %button.btn.btn-default.active{:type => "button"} Tất cả
+    %button.btn.btn-default{:type => "button"} Áo sơ mi
+    %button.btn.btn-default{:type => "button"} Áo thun
+    %button.btn.btn-default{:type => "button"} Áo khoác
+  .clearfix
   = render 'shared/list_products'
