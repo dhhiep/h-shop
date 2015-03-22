@@ -1,3 +1,5 @@
+window.onload = ->
+  $('#page_loading').addClass('animated fadeOutUp')
 $(document).ready ->
   Messenger.options =
     extraClasses: 'messenger-fixed messenger-on-bottom messenger-on-right'
@@ -16,16 +18,23 @@ $(document).ready ->
     pagination: false
     autoPlay: true
     navigation: true
-    navigationText: [ "<i class='fa fa-chevron-circle-left'></i>", "<i class='fa fa-chevron-circle-right'></i>" ]
+    navigationText: [ "<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>" ]
     rewindNav: true
     scrollPerPage: true
     slideSpeed: 800
     stopOnHover: true
 
+
   $("#scroll_to_top").click ->
     $("#header").ScrollTo
       duration: 1500
       easing: 'easeInOutCirc'
+
+  $(window).scroll ->
+    if $(this).scrollTop()
+      $('#scroll_to_top').fadeIn()
+    else
+      $('#scroll_to_top').fadeOut()
 
   wow = new WOW(
     boxClass: "wow" # animated element css class (default is wow)

@@ -38,23 +38,60 @@
 .owl-theme
   .owl-controls
     .owl-buttons
+      div:hover
+        opacity: 0.7 !important
       .owl-prev
-        left: -27px
+        right: 54px
       .owl-next
-        right: -27px
+        right: 12px
       div
-        top: 42%
-        position: absolute
-        background: none
-        border-radius: 30px
-        color: black
+        background: none repeat scroll 0 0 #fff
+        border: 1px solid rgba(0, 0, 0, 0.32)
+        border-radius: 4px
+        color: rgba(0, 0, 0, 0.32)
         display: inline-block
-        font-size: 30px
-        margin: 5px
+        font-size: 23px
+        margin: auto
         opacity: 0.5
-        padding: 3px 10px
+        padding: 0 13px
+        position: absolute
+        text-align: center
+        top: -32px
 
 // Elements CSS
+
+#page_loading
+  background: none repeat scroll 0 0 #f1f1f1
+  height: 100%
+  left: 0
+  padding-top: 17px
+  position: fixed
+  text-align: center
+  top: 0
+  width: 100%
+  z-index: 999999
+  *
+    -webkit-animation-duration: 3s
+    -moz-animation-duration: 3s
+    -o-animation-duration: 3s
+    animation-duration: 3s
+    -webkit-animation-delay: 2s
+    -moz-animation-delay: 2s
+    -o-animation-delay: 2s
+    animation-delay: 2s
+  img
+    width: 200px
+  .spin
+    display: table
+    height: 95%
+    position: fixed
+    top: 0
+    width: 100%
+    .icon-spin
+      display: table-cell
+      font-size: 40px
+      margin-top: 26px
+      vertical-align: bottom
 
 #scroll_to_top
   background-color: rgba(0, 0, 0, 0.3)
@@ -64,6 +101,7 @@
   cursor: pointer
   font-size: 22px
   font-weight: bold
+  display: none
   height: 50px
   padding-left: 1px
   padding-top: 6px
@@ -71,6 +109,7 @@
   right: 15px
   text-align: center
   width: 50px
+  z-index: 999999999
 
 #main-slider
   .item-caption
