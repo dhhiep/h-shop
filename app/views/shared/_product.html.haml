@@ -11,9 +11,11 @@
     = image_tag "products/product-#{rand(1..8)}.jpg", size: "240x240"
   .price
     = "#{ rand(100..999) }K"
-  %a{:href => "#"}
-    .caption
-      .name
-        = Faker::Name.name.humanize
-      .description
-        = truncate(Faker::Lorem.paragraph.humanize, length: 200)
+  .caption
+    %a.categories{:href => "/categories/#{ Faker::Hacker.abbreviation }"}
+      = Faker::Hacker.abbreviation
+    %a.name{:href => "/products/#{ Faker::Name.name.humanize }"}
+      = Faker::Name.name.humanize
+    .rating{"data-score" => "#{ rand(0.0..5.0)}"}
+    .description
+      =# truncate(Faker::Lorem.paragraph.humanize, length: 200)

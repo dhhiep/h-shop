@@ -44,3 +44,17 @@ $(document).ready ->
     live: true # act on asynchronously loaded content (default is true)
   )
   wow.init()
+
+  $('.product-item .caption .rating').raty
+    starOn  :  '<%= asset_url("raty/star-on.png") %>'
+    starHalf:  '<%= asset_url("raty/star-half.png") %>'  
+    starOff:   '<%= asset_url("raty/star-off.png") %>'  
+    starOn:    '<%= asset_url("raty/star-on.png") %>'
+    cancelOff: '<%= asset_url("raty/cancel-off.png") %>'  
+    cancelOn:  '<%= asset_url("raty/cancel-on.png") %>' 
+    half: true
+    readOnly: true
+    number: ->
+      5
+    score: ->
+      $(@).attr('data-score')
