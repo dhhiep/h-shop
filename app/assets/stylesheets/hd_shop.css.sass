@@ -61,7 +61,7 @@
 // Elements CSS
 
 #page_loading
-  background: none repeat scroll 0 0 #f1f1f1
+  background: none repeat scroll 0 0 #fff
   height: 100%
   left: 0
   padding-top: 17px
@@ -85,7 +85,7 @@
     display: table
     height: 95%
     position: fixed
-    top: 0
+    top: -8px
     width: 100%
     .icon-spin
       display: table-cell
@@ -356,51 +356,23 @@ body
   #map
     width: 100%
     height: 350px
-@media all and (max-width: 768px)
-  #main-slider
-    .item-caption
-      .item-caption-inner
-        .item-caption-wrapper
-          .item-title
-            font-size: 23px
-          .item-description
-            font-size: 40px
-            margin-bottom: 14px
-            margin-top: -12px
-          .shop-now
-            font-size: 13px
+
+
+/*==================================================
+  =            Bootstrap 3 Media Queries           =
+  ==================================================*/
+
+/*==========  Mobile First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
   .owl-carousel
     .owl-wrapper-outer
       .owl-wrapper
         left: -2px !important
 
-  .owl-theme
-    .owl-controls
-      .owl-buttons
-        .owl-prev
-          left: -20px
-        .owl-next
-          right: -20px
-  @media all and (max-width: 500px)
-    .hr-title
-      span
-        font-size: 20px
-    #main-slider
-      .item-caption
-        .item-caption-inner
-          .item-caption-wrapper
-            .item-title
-              font-size: 16px
-            .item-description
-              font-size: 21px
-              margin-bottom: 3px
-              margin-top: -3px
-            .shop-now
-              border: 2px solid
-              font-size: 10px
-              padding: 4px
-// Small devices (tablets, 768px and up)
-@media all and (min-width: 768px) and (max-width: 992px)
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
   .owl-theme
     .owl-controls
       .owl-buttons
@@ -423,11 +395,58 @@ body
     .owl-wrapper-outer
       .owl-wrapper
         left: -2px !important
-// Medium devices (desktops, 992px and up)
-@media all and (min-width: 992px) and (max-width: 1200px)
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+  #header 
+    #main-menu 
+      #search_form 
+        .search-logo
+          top: 18px
+  #main-slider
+    .item-caption
+      .item-caption-inner
+        .item-caption-wrapper
+          .item-title
+            font-size: 23px
+          .item-description
+            font-size: 40px
+            margin-bottom: 14px
+            margin-top: -12px
+          .shop-now
+            font-size: 13px
   .owl-carousel
     .owl-wrapper-outer
       .owl-wrapper
         left: -2px !important
-// Large devices (large desktops, 1200px and up)
-@media all and (min-width: 1200px)
+
+  .owl-theme
+    .owl-controls
+      .owl-buttons
+        .owl-prev
+          // left: -20px
+        .owl-next
+          // right: -20px
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px)
+  .hr-title
+    span
+      font-size: 20px
+  #main-slider
+    .item-caption
+      .item-caption-inner
+        .item-caption-wrapper
+          .item-title
+            font-size: 16px
+          .item-description
+            font-size: 21px
+            margin-bottom: 3px
+            margin-top: -3px
+          .shop-now
+            border: 2px solid
+            font-size: 10px
+            padding: 4px
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px)
