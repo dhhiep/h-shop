@@ -112,53 +112,58 @@
   z-index: 999999999
 
 #main-slider
-  .item-caption
-    bottom: 0
-    height: 100%
-    left: 0
-    margin: auto
-    position: absolute
-    right: 0
-    width: 100%
-    color: white
-    text-align: center
-    text-transform: uppercase
-    background-color: rgba(0, 0, 0, 0.38)
-    *
-      -webkit-transition: all 500ms
-      -moz-transition: all 500ms
-      transition: all 500ms
-    .item-caption-inner
-      display: table
+  width: 100%
+  height: 100%
+  overflow: hidden
+  #fractionSlider
+    max-width: 100% !important
+    .overlay  
+      background-color: rgba(0, 0, 0, 0.2)
       height: 100%
+      left: 0
+      position: absolute
+      top: 0
       width: 100%
-      .item-caption-wrapper
-        display: table-cell
-        vertical-align: middle
-        .item-title
-          color: white
-          font-size: 46px
-          font-weight: 600
-          &:hover
-            cursor: pointer
-            text-decoration: none
-            color: #138EC6
-        .item-description
-          font-size: 5em
-          font-weight: 600
-          margin-bottom: 53px
-          margin-top: -15px
-        .shop-now
-          border: 3px solid white
-          color: white
+      z-index: 6001
+    .fs_fixed_obj
+      width: 100%
+      height: auto
+    .item-title
+      width: 100%
+      text-align: center
+      a
+        color: white
+        font-size: 46px
+        font-weight: 600
+        &:hover
           cursor: pointer
-          font-size: 17px
-          font-weight: 700
-          padding: 8px
-          &:hover
-            background-color: #138ec6
-            border: 3px solid #138ec6
-            text-decoration: none
+          text-decoration: none
+          color: #138EC6
+    .item-description
+      width: 100%
+      font-size: 5em
+      font-weight: 600
+      margin-bottom: 53px
+      margin-top: -15px
+      color: white
+      text-align: center
+      .price
+        color: rgba(77%, 3%, 3%, 0.8)
+        text-shadow: 0 0 11px rgba(255, 255, 255, 0.36)
+    .shop-now
+      width: 100%
+      text-align: center
+      a
+        border: 3px solid white
+        color: white
+        cursor: pointer
+        font-size: 17px
+        font-weight: 700
+        padding: 8px
+        &:hover
+          background-color: #138ec6
+          border: 3px solid #138ec6
+          text-decoration: none
 
 .hr-title
   font-size: 1.714em
@@ -314,10 +319,6 @@
           .row
             a
               opacity: 1
-
-      // .caption
-      //   background-color: rgba(255, 255, 255, 0.8)
-      //   height: 132px
 
 // Layout
 body

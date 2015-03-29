@@ -1,8 +1,0 @@
-development:
-  project_name: "HD Shop"
-  twilio_sid: ACecd8257fe52d8f218b5dc80dedab2438
-  twilio_token: e46b00e192b803cacb19180ef1606b78
-  twilio_from: '12674330908'
-  bucket: tsi-mails
-  access_key_id: AKIAIKBT7MCMKLGKOEOQ
-  secret_access_key: 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

@@ -19,5 +19,6 @@
 //= require messenger-theme-flat
 //= require select2
 //= require moment
+//= require jquery.fractionslider
 //= require_tree .
 

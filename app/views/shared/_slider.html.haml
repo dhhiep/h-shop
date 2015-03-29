@@ -1,0 +1,21 @@
+#main-slider
+  #fractionSlider
+    .fs_loader
+    - (1..5).each do |i|
+      .slide{"data-in" => "fade", "data-out" => "fade"}
+        .overlay{ "data-delay" => "100", "data-in" => "fade", "data-time" => "500" }
+        - img_url = eval "asset_url('sliders/#{i}.jpg')"
+        %img.background{"data-delay" => "0", "data-fixed" => "", "data-in" => "fade", "data-out" => "fade", "data-position" => "0,0", :src => "#{ img_url }"}
+        .item-title{"data-delay" => "200", "data-in" => "#{ data_in_out.sample }", "data-out" => "#{ data_in_out.sample }", "data-ease-in" => "easeInCirc", "data-ease-out" => "easeInOutCubic", "data-position" => "66,0"} 
+          %a{:href => "#"}
+            = Faker::Hacker.abbreviation
+        .item-description{"data-delay" => "300", "data-in" => "#{ data_in_out.sample }", "data-out" => "#{ data_in_out.sample }", "data-ease-in" => "easeOutQuint", "data-ease-out" => "easeInQuint", "data-position" => "117,0"}
+          up to 
+          %span.price
+            = "#{ rand(10..99) }%"
+          off
+          %br/
+          on selected items
+        .shop-now{"data-delay" => "400", "data-in" => "#{ data_in_out.sample }", "data-out" => "bottom", "data-ease-in" => "easeInOutCubic", "data-ease-out" => "easeInCirc", "data-position" => "300,0"}
+          %a{:href => "#"}
+            THÊM VÀO GIỎ

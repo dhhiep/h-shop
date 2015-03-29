@@ -58,3 +58,12 @@ $(document).ready ->
       5
     score: ->
       $(@).attr('data-score')
+
+  $('#fractionSlider').fractionSlider
+    'fullWidth': true
+    # 'controls': true
+    'pager': false
+    'responsive': true
+    'dimensions': '1000,400'
+    'increase': true
+    'slideTransitionSpeed' : 800
