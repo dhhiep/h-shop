@@ -25,6 +25,7 @@ gem 'ransack'
 gem 'flickraw'
 gem 'kaminari'
 gem 'momentjs-rails'
+gem 'fancybox2-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

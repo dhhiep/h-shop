@@ -8,7 +8,9 @@
           = image_tag('save-off.png')
           .text-off
             = "#{rand(20..80)}%"
-    .black-layer
+    - small_image_url = asset_url("products/product-#{rand(1..8)}.jpg")
+    - large_image_url = small_image_url
+    = link_to fa_icon("search-plus"), large_image_url, class: 'black-layer fancybox'
     .nav-bar
       .row
         %a.quick-view{:href => "/a"}
@@ -17,7 +19,7 @@
         %a.add-to-cart{:href => "/b"}
           .col-sm-6.center-block
             THÊM VÀO GIỎ
-    = image_tag "products/product-#{rand(1..8)}.jpg", size: "240x240", class: 'product_photo'
+    = image_tag small_image_url, size: "240x240", class: 'product_photo'
   .caption
     %a.categories{:href => "/categories/#{ Faker::Hacker.abbreviation }"}
       = Faker::Hacker.abbreviation

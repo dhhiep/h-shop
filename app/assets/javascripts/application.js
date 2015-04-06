@@ -20,5 +20,6 @@
 //= require select2
 //= require moment
 //= require jquery.fractionslider
+//= require fancybox
 //= require_tree .
 
