@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,400italic,500italic,700,900,700italic,900italic&subset=latin,vietnamese)
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300,100&subset=latin,vietnamese)
 
 // Plugin config
 .bx-wrapper
@@ -58,8 +58,171 @@
         text-align: center
         top: -32px
 
-// Elements CSS
+.fancybox-overlay-fixed
+  z-index: 2147483647
 
+
+.dropdown-menu
+  z-index: 2147483646
+
+// Elements CSS
+#header
+  #top_bar
+    height: 41px
+    line-height: 41px
+    background-color: #1C2128
+    padding: 0 31px
+    .greeting.pull-left
+      margin-left: 30px
+      color: #9f9fa0
+    #top-bar-links
+      li
+        display: inline-block
+        font-size: 14px
+        margin: 0 30px 0 1px
+        a
+          color: #9f9fa0
+          -webkit-transition: all 0.5s ease
+          -moz-transition: all 0.5s ease
+          -o-transition: all 0.5s ease
+          transition: all 0.5s ease
+          &:hover
+            text-decoration: none
+            color: #25BFA1
+
+  #main-menu
+    width: 100%
+    background-color: #fff
+    text-align: center
+    position: relative
+    .top
+      padding: 26px 74px 14px
+      #search_form
+        margin-top: 5px
+        text-align: left
+        .search-logo
+          font-size: 17px
+          cursor: pointer
+        input
+          border: none
+          font-style: italic
+          margin-left: 10px
+      .logo
+        img
+          height: 60px
+          margin-top: -10px
+      #mini-cart
+        margin-top: 5px
+        position: relative
+        .status
+          position: relative
+          font-size: 16px
+          text-align: right
+          &:hover
+            .cart-dropdown
+              opacity: 1
+              visibility: visible
+              -webkit-transition-delay: 0s
+              -moz-transition-delay: 0s
+              -ms-transition-delay: 0s
+              -o-transition-delay: 0s
+              -transition-delay: 0s
+
+          a
+            color: #191919
+          .total-quantity
+            background-color: #25bfa1
+            border-radius: 50%
+            color: white
+            font-size: 13px
+            padding: 1px 6px
+            position: absolute
+            right: -13px
+            top: -16px
+          .cart-dropdown
+            opacity: 0
+            visibility: hidden
+            border: 1px solid rgba(0, 0, 0, 0.17)
+            padding: 8px
+            position: absolute
+            right: 0
+            top: 26px
+            width: 423px
+            z-index: 999
+            z-index: 2147483646
+            background-color: #fff
+            -webkit-transition: all 0.5s ease
+            -moz-transition: all 0.5s ease
+            -o-transition: all 0.5s ease
+            transition: all 0.5s ease
+            -webkit-transition-delay: 2s
+            -moz-transition-delay: 2s
+            -ms-transition-delay: 2s
+            -o-transition-delay: 2s
+            -transition-delay: 2s
+            .list-cart-items
+              td
+                vertical-align: middle
+                text-align: center
+                &.product-info
+                  .name
+                    margin-bottom: 2px
+                .thumb
+                  padding: 4px
+                  position: relative
+                  .quantity
+                    background-color: #25bfa1
+                    border-radius: 50%
+                    color: white
+                    font-size: 12px
+                    left: 4px
+                    padding: 1px 6px
+                    position: absolute
+                    top: -6px
+                  img
+                    width: 50px
+                    height: 50px
+                .unit-price
+                  font-style: italic
+            .info 
+              font-size: 14px
+              font-weight: bold
+              text-align: left
+              span
+                color: #d14f4f
+                font-size: 22px
+                font-weight: bolder
+                margin-left: 4px
+            .cart-action
+              padding-top: 10px
+              text-align: right
+              .button-checkout
+                background-color: #25bfa1
+                color: #fff
+                &:hover
+                  background-color: #30A890
+    .bottom
+      border-top: 1px solid #e8e8e9
+      border-bottom: 1px solid #e8e8e9
+      height: 57px
+      ul#menu-links
+        list-style: none
+        padding: 0
+        padding-top: 18px
+        li
+          display: inline
+          margin: 0 17px
+          a
+            color: rgba(132, 132, 132, 0.87)
+            font-size: 13px
+            font-weight: 500
+            text-decoration: none
+            text-transform: uppercase
+            &:hover
+              color: #25bfa1
+          &.active
+            a
+              color: #25bfa1
 #page_loading
   background: none repeat scroll 0 0 #fff
   height: 100%
@@ -328,29 +491,8 @@
 body
   padding: 0
   margin: 0
-  font-family: 'Roboto', sans-serif
-
-#header
-  #main-menu
-    .navbar
-      margin-bottom: 0
-    .logo
-      height: 40px
-      margin-top: -11px
-    #search_form
-      position: relative
-      .form-group
-        width: 100%
-        input
-          width: 100%
-          padding-right: 30px
-      .search-logo
-        font-size: 18px
-        opacity: 0.7
-        position: absolute
-        right: 23px
-        top: 7px
-        cursor: pointer
+  font-family: 'Roboto Slab', serif
+  font-size: 13px
 #main-content
   background-color: white
   margin: 33px auto auto

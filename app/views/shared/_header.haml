@@ -1,34 +1,109 @@
 #header
+  #top_bar
+    .greeting.pull-left
+      Chào mừng bạn đến với HD Shop!
+    %ul#top-bar-links.pull-right
+      %li
+        %a{:href => ""}
+          = fa_icon "shopping-cart"
+          &nbsp;
+          Giỏ Hàng
+      %li
+        %a{:href => ""}
+          = fa_icon "user"
+          &nbsp;
+          Đăng Nhập
   #main-menu
-    %nav.navbar.navbar-default
-      .container-fluid
-        .navbar-header
-          %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
-            %span.sr-only Menu
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.navbar-brand{:href => "#"}
+    .top
+      .row
+        .col-xs-12.col-md-4.col-sm-4{style: "padding-left: 0px"}
+          %form#search_form{:role => "search", action: "/abc", method: :post}
+            = fa_icon "search", class: "search-logo", onclick: "search_form.submit()"      
+            %input{:placeholder => "Search Product...", :type => "text"}/
+        .col-xs-12.col-md-4.col-sm-4
+          .logo
             = image_tag "logo.png", class: "logo"
-        #bs-example-navbar-collapse-1.collapse.navbar-collapse
-          %form#search_form.navbar-form.navbar-left{:role => "search", action: "/abc", method: :post}
-            .form-group
-              %input.form-control{:placeholder => "Enter product name", :type => "text"}/
-            = fa_icon "search", class: "search-logo", onclick: "search_form.submit()"
-          %ul.nav.navbar-nav.navbar-right
-            %li.active
-              %a{:href => "#"} Trang Chủ
-            %li
-              %a{:href => "#"} Sản Phẩm
-            %li
-              %a{:href => "#"} Liên Hệ
-            %li.dropdown
-              %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-                Hiệp Đinh
-                %span.caret
-              %ul.dropdown-menu{:role => "menu"}
-                %li
-                  %a{:href => "#"} Setting
-                %li.divider
-                %li
-                  %a{:href => "#"} Logout
+        .col-xs-12.col-md-4.col-sm-4
+          #mini-cart
+            .status
+              %a{:href => "/cart"}
+                = fa_icon "shopping-cart"
+                .total-quantity
+                  2
+              .cart-dropdown
+                %table.table.table-bordered.list-cart-items
+                  - 3.times do 
+                    %tr
+                      %td{style: "width: 87px"}
+                        .thumb
+                          .quantity 1
+                          = image_tag "product-thumb.jpg"
+                      %td.product-info
+                        .name
+                          Máy ảnh Canon 5D
+                        .unit-price
+                          (39K)
+                      %td
+                        .action
+                          .remove
+                          = fa_icon "times-circle-o"
+                .info
+                  = fa_icon "asterisk" 
+                  Tổng cộng: 
+                  %span 30K
+                .cart-action
+                  .button-checkout.btn
+                    = fa_icon "check" 
+                    THANH TOÁN
+    .bottom
+      .col-xs-12
+        %ul#menu-links
+          %li.active
+            %a{:href => "#"}
+              Trang chủ
+          %li
+            %a{:href => "#"}
+              Sản phẩm
+          %li
+            %a{:href => "#"}
+              Hàng cũ
+          %li
+            %a{:href => "#"}
+              Liên hệ
+          %li
+            %a{:href => "#"}
+              Về chúng tôi
+
+  / #main-menu
+  /   %nav.navbar.navbar-default
+  /     .container-fluid
+  /       .navbar-header
+  /         %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+  /           %span.sr-only Menu
+  /           %span.icon-bar
+  /           %span.icon-bar
+  /           %span.icon-bar
+  /         %a.navbar-brand{:href => "#"}
+  /           = image_tag "logo.png", class: "logo"
+  /       #bs-example-navbar-collapse-1.collapse.navbar-collapse
+  /         %form#search_form.navbar-form.navbar-left{:role => "search", action: "/abc", method: :post}
+  /           .form-group
+  /             %input.form-control{:placeholder => "Enter product name", :type => "text"}/
+  /           = fa_icon "search", class: "search-logo", onclick: "search_form.submit()"
+  /         %ul.nav.navbar-nav.navbar-right
+  /           %li.active
+  /             %a{:href => "#"} Trang Chủ
+  /           %li
+  /             %a{:href => "#"} Sản Phẩm
+  /           %li
+  /             %a{:href => "#"} Liên Hệ
+  /           %li.dropdown
+  /             %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+  /               Hiệp Đinh
+  /               %span.caret
+  /             %ul.dropdown-menu{:role => "menu"}
+  /               %li
+  /                 %a{:href => "#"} Setting
+  /               %li.divider
+  /               %li
+  /                 %a{:href => "#"} Logout
