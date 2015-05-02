@@ -1,0 +1,8 @@
+.row
+  .col-xs-12.col-sm-3
+    - if content_for? :left_sidebar_content 
+      = yield :left_sidebar_content
+    - else
+      = render 'shared/left_sidebar_content'
+  .col-xs-12.col-sm-9
+    = yield

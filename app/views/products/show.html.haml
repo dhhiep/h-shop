@@ -1,0 +1,30 @@
+- product_discount = [true, false].sample
+- product_new = [true, false].sample
+- available = [true, false].sample
+.product-details-page.row
+  .col-xs-5
+    = image_tag "products/product-1.jpg", class: "img-responsive"
+  .col-xs-7
+    .product-name
+      = Faker::Name.name
+    .rating.init{"data-score" => "#{ rand(0.0..5.0)}"}
+    .stock-status
+      Tình trạng:
+      - if available
+        %span.available
+          Còn hàng
+      - else
+        %span.not-available
+          Hết hàng
+    .clearfix
+    .description
+      = Faker::Lorem.paragraph
+    .price
+      - if product_discount
+        .discount
+          = "#{ rand(100..999) }K"
+      = "#{ rand(100..999) }K"
+    .add-to-cart
+      %input.quantity{:type => "number", value: 1}/
+      %button.btn.btn-primary
+        ADD TO CART

@@ -8,11 +8,13 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    = render 'shared/page_loading'
+    =# render 'shared/page_loading'
     = render 'shared/header'
-    = render 'shared/slider'
+    =# render 'shared/slider' if show_slider?
+    = render 'shared/breadcrumbs' unless hide_breadcrumbs?
     .container
       #main-content
-        = yield
-    = render 'shared/footer'
+        = render layout: content_layout do
+          = yield
+    =# render 'shared/footer'
     = render "shared/back_to_top"

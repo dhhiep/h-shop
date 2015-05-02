@@ -10,7 +10,8 @@
             = "#{rand(20..80)}%"
     - small_image_url = asset_url("products/product-#{rand(1..8)}.jpg")
     - large_image_url = small_image_url
-    = link_to fa_icon("search-plus"), large_image_url, class: 'black-layer fancybox'
+    %a.black-layer{:href => "/abc"}
+    = link_to fa_icon("search-plus"), large_image_url, class: 'fancybox fancybox-zoom'
     .nav-bar
       .row
         %a.quick-view{:href => "/a"}
@@ -25,7 +26,7 @@
       = Faker::Hacker.abbreviation
     %a.name{:href => "/products/#{ Faker::Name.name.humanize }"}
       = Faker::Name.name.humanize
-    .rating{"data-score" => "#{ rand(0.0..5.0)}"}
+    .rating.init{"data-score" => "#{ rand(0.0..5.0)}"}
     .price
       - if product_discount
         .discount
