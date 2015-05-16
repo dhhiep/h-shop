@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
   resources :home, only: [:index], path: '/'
   resources :products, only: [:index, :show]
+  resources :transactions, only: [], path: '/' do
+    collection do
+      get :cart
+      post :cart
+      get :checkout
+      get "transaction/:id/completed" => :completed, as: :completed
+    end
+  end
+
   root 'home#index'
   
   # The priority is based upon order of creation: first created -> highest priority.

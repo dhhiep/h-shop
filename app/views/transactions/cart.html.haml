@@ -1,0 +1,64 @@
+%h1.page-title
+  giỏ hàng
+= form_for cart_transactions_path, html: { id: "cart_page" } do
+  %table.table.table-striped.table-bordered.table-hover.table-responsive
+    %thead
+      %tr
+        %th HÌNH ẢNH
+        %th TÊN SẢN PHẨM
+        %th GIÁ
+        %th SỐ LƯỢNG
+        %th TỔNG CỘNG
+        %th XÓA
+    %tbody
+      - 5.times do
+        %tr
+          %td
+            = link_to product_path(1) do
+              = image_tag 'mini-products/1.jpg', size: '55x55'
+          %td{ style: 'text-align: left;'}
+            = link_to "Integer consequat ante lectus", product_path(1)
+          %td
+            50,000 VND
+          %td
+            %input.quantity{:type => "number", value: 1}
+          %td
+            50,000 VND
+          %td
+            %a.remove-form-cart{:href => "javascript:void(0)"}
+              %i.fa.fa-trash
+  .row.cart-action
+    .col-xs-12.col-sm-8
+      %a.btn.btn-primary.pull-left{href: "/"}
+        = fa_icon 'shopping-cart'
+        MUA THÊM
+      %button.btn.btn-primary.pull-right
+        = fa_icon 'refresh'
+        CẬP NHẬT
+
+    .col-xs-12.col-sm-4
+      %table.summary.table.table-striped.table-bordered.table-hover.table-responsive
+        %tbody
+          %tr
+            %td.text
+              Tổng Cộng
+            %td.value
+              200,000 VND 
+          %tr
+            %td.text
+              Thuế
+            %td.value
+              0 VND
+          %tr
+            %td.text
+              Vận Chuyển
+            %td.value
+              Miễn Phí
+          %tr
+            %td.text
+              Thành Tiền
+            %td.value
+              200,000 VND
+      %a.btn.btn-primary{:href => "/checkout"}
+        = fa_icon 'check'
+        THANH TOÁN

@@ -1,0 +1,31 @@
+#mini-cart
+  .status
+    %a{:href => "/cart"}
+      = fa_icon "shopping-cart"
+      .total-quantity
+        2
+    .cart-dropdown
+      %table.table.table-bordered.list-cart-items
+        - 3.times do 
+          %tr
+            %td{style: "width: 87px"}
+              .thumb
+                .quantity 1
+                = image_tag "product-thumb.jpg"
+            %td.product-info
+              .name
+                Máy ảnh Canon 5D
+              .unit-price
+                (39K)
+            %td
+              .action
+                .remove
+                = fa_icon "trash"
+      .info
+        = fa_icon "asterisk" 
+        Tổng cộng: 
+        %span 300,000 VND
+      .cart-action
+        %a.button-checkout.btn{:href => "/checkout"}
+          = fa_icon "check" 
+          THANH TOÁN

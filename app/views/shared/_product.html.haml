@@ -1,5 +1,6 @@
 - product_discount = [true, false].sample
 - product_new = [true, false].sample
+- product_url = product_path(1)
 %div.product-item.wow.fadeInUp
   .product-image
     - if product_discount
@@ -10,14 +11,14 @@
             = "#{rand(20..80)}%"
     - small_image_url = asset_url("products/product-#{rand(1..8)}.jpg")
     - large_image_url = small_image_url
-    %a.black-layer{:href => "/abc"}
+    = link_to '', product_url, class: "black-layer"
     = link_to fa_icon("search-plus"), large_image_url, class: 'fancybox fancybox-zoom'
     .nav-bar
       .row
-        %a.quick-view{:href => "/a"}
+        = link_to product_url, class: "quick-view" do
           .col-sm-6.center-block
             XEM NHANH
-        %a.add-to-cart{:href => "/b"}
+        %a.add-to-cart{:href => "javascript:void(0)"}
           .col-sm-6.center-block
             THÊM VÀO GIỎ
     = image_tag small_image_url, size: "240x240", class: 'product_photo'

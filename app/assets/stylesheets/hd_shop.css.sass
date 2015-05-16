@@ -85,6 +85,18 @@
       color: #25bfa1
       
 // Elements CSS
+h1.page-title 
+  border-bottom: 1px solid #e5e5e5
+  color: #1abc9c
+  font-size: 24px
+  margin-bottom: 32px
+  margin-top: 0
+  padding: 0 0 9px
+  text-transform: uppercase
+  &.double
+    border-bottom: 4px double #e5e5e5
+
+
 #header
   #top_bar
     height: 41px
@@ -154,10 +166,14 @@
             border-radius: 50%
             color: white
             font-size: 13px
-            padding: 1px 6px
+            height: 20px
+            line-height: 17px
+            padding-top: 1px
             position: absolute
             right: -13px
+            text-align: center
             top: -16px
+            width: 20px
           .cart-dropdown
             opacity: 0
             visibility: hidden
@@ -368,7 +384,31 @@
     padding: 0 40px
     position: relative
     z-index: 2
-
+#cart_page
+  table
+    td, th
+      vertical-align: middle
+      text-align: center
+    &.summary
+      font-weight: bold
+      font-size: 14px
+      .value
+        font-weight: bolder
+        font-size: 16px
+      td
+        padding: 11px 19px
+        text-align: left
+  .cart-action
+    .btn
+      border-radius: 0
+      padding: 11px 19px 12px
+      i.fa
+        margin-right: 6px
+  input.quantity
+    padding: 10px
+  .remove-form-cart
+    font-size: 20px
+    color: #9B1A1A
 #product-items
   .owl-item
     padding: 13px
@@ -556,6 +596,28 @@ body
   width: 100%
 
 .product-details-page
+  .main-image
+    position: relative
+    overflow: hidden
+    .save-off-banner
+      position: absolute
+      right: 16px
+      top: -71px
+      z-index: 4
+      .wrap-banner
+        position: relative
+        img
+          width: 81px
+          height: auto
+        .text-off
+          color: #fff
+          font-size: 24px
+          font-weight: bolder
+          left: 18px
+          position: absolute
+          top: 71px
+    img
+      width: 100%
   .product-name
     font-size: 27px
     margin-bottom: 13px
@@ -598,13 +660,35 @@ body
       margin-top: -2px
       padding: 9px 15px
 
+#product_details_tab
+  margin-top: 40px
 
+#product_details_tab_content.tab-content
+  margin-top: 10px
+  #images
+    .owl-carousel
+      margin-top: 55px
+      a.fancybox
+        .image
+          width: 200px
+    .owl-theme 
+      .owl-controls 
+        .owl-buttons 
+          .owl-next
+            line-size: 22px
+            right: 0
+            top: -45px
+          .owl-prev
+            font-size: 22px
+            right: 43px
+            top: -45px
 #list-products
   margin-top: 80px
   .line-product-item
     .product-item
       margin-top: 30px
-
+      .image
+        width: 200px
 #footer
   margin-top: 55px
   text-align: center
