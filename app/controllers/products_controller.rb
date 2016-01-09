@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
 
   private
     def load_resource
+      @title = @product_name
       if collection?
         @products = []
       else

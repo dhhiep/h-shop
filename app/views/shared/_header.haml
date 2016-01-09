@@ -1,27 +1,27 @@
 #header
   #top_bar
     .greeting.pull-left
-      Chào mừng bạn đến với HD Shop!
+      = t('header.getting')
     %ul#top-bar-links.pull-right
       %li
         %a{:href => ""}
           = fa_icon "shopping-cart"
           &nbsp;
-          Giỏ Hàng
+          = t('header.cart')
       %li
         %a{:href => ""}
           = fa_icon "user"
           &nbsp;
-          Đăng Nhập
+          = t('header.login')
   #main-menu
     .top
       .row
         .col-xs-12.col-md-4.col-sm-4{style: "padding-left: 0px"}
           %form#search_form{:role => "search", action: "/abc", method: :post}
             = fa_icon "search", class: "search-logo", onclick: "search_form.submit()"      
-            %input{:placeholder => "Search Product...", :type => "text"}/
+            %input{:placeholder => t('menu.search_place_holder'), :type => "text"}/
         .col-xs-12.col-md-4.col-sm-4
-          .logo
+          %a.logo{:href => "/"}
             = image_tag "logo.png", class: "logo"
         .col-xs-12.col-md-4.col-sm-4
           = render '/shared/mini_cart'

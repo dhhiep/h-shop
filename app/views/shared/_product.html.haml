@@ -31,5 +31,5 @@
     .price
       - if product_discount
         .discount
-          = "#{ rand(100..999) }K"
-      = "#{ rand(100..999) }K"
+          = "#{ rand(100..999) }#{t('currency')}"
+      = "#{ rand(100..999) }#{t('currency')}"

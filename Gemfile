@@ -26,6 +26,8 @@ gem 'flickraw'
 gem 'kaminari'
 gem 'momentjs-rails'
 gem 'fancybox2-rails'
+gem 'slim'
+gem 'acts_as_shopping_cart'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -75,6 +77,7 @@ group :development, :test do
   gem "spring"
   gem "pry"
   gem "byebug"
+  gem 'byebug-color-printer'
   gem "rspec-rails"
   gem "factory_girl_rails"
   gem 'dotenv-rails'

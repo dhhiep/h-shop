@@ -18,31 +18,31 @@
       = product_name
     .rating.init{"data-score" => "#{ rand(0.0..5.0)}"}
     .stock-status
-      Tình trạng:
+      = t('product.stock_status')
       - if available
         %span.available
-          Còn hàng
+          = t('product.in_stock')
       - else
         %span.not-available
-          Hết hàng
+          = t('product.sold_out')
     .clearfix
     .description
       = Faker::Lorem.paragraph
     .price
       - if product_discount
         .discount
-          = "#{ rand(100..999) }K"
-      = "#{ rand(100..999) }K"
+          = "#{ rand(100..999) }#{t('currency')}"
+      = "#{ rand(100..999) }#{t('currency')}"
     .add-to-cart
       %input.quantity{:type => "number", value: 1, disabled: !available}/
       %button.btn.btn-primary{ disabled: !available }
-        THÊM VÀO GIỎ
+        = t('product.add_to_cart')
 
 %ul#product_details_tab.nav.nav-tabs{:role => "tablist"}
   %li.active{:role => "presentation"}
-    %a{"aria-controls" => "review", "data-toggle" => "tab", :href => "#review", :role => "tab"} MÔ TẢ CHI TIẾT
+    %a{"aria-controls" => "review", "data-toggle" => "tab", :href => "#review", :role => "tab"}= t('product.details')
   %li{:role => "presentation"}
-    %a{"aria-controls" => "images", "data-toggle" => "tab", :href => "#images", :role => "tab"} HÌNH ẢNH SẢN PHẨM
+    %a{"aria-controls" => "images", "data-toggle" => "tab", :href => "#images", :role => "tab"}= t('product.product_images')
 
 #product_details_tab_content.tab-content
   #review.tab-pane.active{:role => "tabpanel"} 
@@ -57,7 +57,7 @@
 %ul.nav.nav-tabs{:role => "tablist", style: "margin-top: 50px"}
   %li.active{:role => "presentation"}
     %a{:href => "#"}
-      Ý KIẾN KHÁCH HÀNG
+      = t('product.customer_comment')
 .fb-comments{"data-colorscheme" => "light", "data-href" => "#{ original_url }", "data-numposts" => "5", "data-width" => "100%", "data-mobile" => "true", "data-order-by" => "time"}
 
 :javascript

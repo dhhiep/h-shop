@@ -1,0 +1,16 @@
+vi:
+  currency: 'K'
+  header:
+    login: "Đăng Nhập"
+    cart: "Giỏ Hàng"
+    getting: "Chào mừng bạn đến với HD Shop!"
+  menu:
+    search_place_holder: "Tìm sản phẩm ..."
+  product:
+    details: "MÔ TẢ SẢN PHẨM"
+    product_images: "HÌNH ẢNH SẢN PHẨM"
+    add_to_cart: "THÊM VÀO GIỎ"
+    stock_status: "Tình Trạng:"
+    in_stock: "Còn Hàng"
+    sold_out: "Hết Hàng"
+    customer_comment: "Ý KIẾN KHÁCH HÀNG"
