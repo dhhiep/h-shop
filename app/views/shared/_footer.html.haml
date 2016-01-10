@@ -33,7 +33,7 @@
 
 %script{:src => "//maps.googleapis.com/maps/api/js?v=3.exp", :type => "text/javascript"}
 :javascript
-  function initialize() {
+  function map_footer_initialize() {
     var myLatlng = new google.maps.LatLng(21.0333, 105.8500);
     var mapOptions = {
       zoom: 16,
@@ -48,7 +48,19 @@
     });
   }
 
-  google.maps.event.addDomListener(window, 'load', initialize);
+  $(function(){
+    var map_footer = new Waypoint({
+      element: $('#footer'),
+      handler: function(direction) {
+        if(direction == "down"){
+          console.log('Loading map');
+          map_footer_initialize();
+          this.destroy()
+        }
+      },
+      offset: '200%'
+    })
+  });
 
 
 

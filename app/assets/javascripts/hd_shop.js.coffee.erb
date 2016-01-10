@@ -44,7 +44,7 @@ $(document).ready ->
     mobile: true # trigger animations on mobile devices (default is true)
     live: true # act on asynchronously loaded content (default is true)
   )
-  # wow.init()
+  wow.init()
 
   $('.rating.init').raty
     starOn  :  '<%= asset_url("raty/star-on.png") %>'
@@ -60,13 +60,4 @@ $(document).ready ->
     score: ->
       $(@).attr('data-score')
 
-  $('#fractionSlider').fractionSlider
-    'fullWidth': true
-    # 'controls': true
-    'pager': false
-    'responsive': true
-    'dimensions': '1000,400'
-    'increase': true
-    'slideTransitionSpeed' : 800
-  
   $("a.fancybox").fancybox()
