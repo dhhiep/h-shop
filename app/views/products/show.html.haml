@@ -13,6 +13,9 @@
           .text-off
             = "#{rand(20..80)}%"
     = image_tag "products/product-1.jpg", class: "img-responsive"
+    %a.fancybox{:href => ""}
+    %a.fancybox{:href => image_url("products/product-1.jpg"), :rel => "gallery1", :title => product_name}
+      %span.fa.fa-expand
   .col-xs-7
     .product-name
       = product_name

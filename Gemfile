@@ -15,12 +15,10 @@ gem "binding_of_caller"
 gem 'tinymce-rails'
 gem 'modernizr-rails'
 gem "font-awesome-rails"
-gem 'bxslider-rails'
 gem 'haml'
 gem "messengerjs-rails"
 gem "select2-rails"
 gem 'bootstrap-sass'
-gem 'autoprefixer-rails'
 gem 'ransack'
 gem 'flickraw'
 gem 'kaminari'
@@ -28,6 +26,7 @@ gem 'momentjs-rails'
 gem 'fancybox2-rails'
 gem 'slim'
 gem 'acts_as_shopping_cart'
+gem 'friendly_id'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

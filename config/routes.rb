@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       get :cart
       post :cart
       get :checkout
+      post :place_order
       get "transaction/:id/completed" => :completed, as: :completed
     end
   end

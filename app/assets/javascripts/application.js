@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require jquery.turbolinks
 //= require bootstrap-sprockets
-//= require bxslider
 //= require messenger
 //= require messenger-theme-flat
 //= require select2

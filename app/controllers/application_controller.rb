@@ -20,6 +20,6 @@ class ApplicationController < ActionController::Base
     end
 
     def content_layout
-      @content_layout ||= 'layouts/content_layouts/left_sidebar'
+      @content_layout ||= 'layouts/content_layouts/right_sidebar'
     end
 end

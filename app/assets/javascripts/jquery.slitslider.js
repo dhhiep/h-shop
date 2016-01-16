@@ -74,7 +74,7 @@
 		// amount (%) to translate both slices - adjust as necessary
 		translateFactor : 230,
 		// maximum possible angle
-		maxAngle : 25,
+		maxAngle : 99,
 		// maximum possible scale
 		maxScale : 2,
 		// slideshow on / off
