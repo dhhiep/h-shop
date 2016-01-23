@@ -4,12 +4,12 @@
   %table.table.table-striped.table-bordered.table-hover.table-responsive
     %thead
       %tr
-        %th HÌNH ẢNH
-        %th TÊN SẢN PHẨM
-        %th GIÁ
-        %th SỐ LƯỢNG
-        %th TỔNG CỘNG
-        %th XÓA
+        %th= t('cart.image')
+        %th= t('product.name') 
+        %th= t('product.price')
+        %th= t('cart.quantity')
+        %th= t('cart.subtotal')
+        %th= t('cart.remove')
     %tbody
       - 5.times do
         %tr
@@ -21,7 +21,7 @@
           %td
             50,000 VND
           %td
-            %input.quantity{:type => "number", value: 1}
+            %input.quantity{:type => "number", value: 1, :min => 0}
           %td
             50,000 VND
           %td
@@ -31,34 +31,22 @@
     .col-xs-12.col-sm-8
       %a.btn.btn-primary.pull-left{href: "/"}
         = fa_icon 'shopping-cart'
-        MUA THÊM
+        = t('cart.continue_shopping').upcase
       %button.btn.btn-primary.pull-right
         = fa_icon 'refresh'
-        CẬP NHẬT
+        = t('cart.update').upcase
 
     .col-xs-12.col-sm-4
       %table.summary.table.table-striped.table-bordered.table-hover.table-responsive
         %tbody
           %tr
-            %td.text
-              Tổng Cộng
+            %td.text= t('cart.subtotal')
             %td.value
               200,000 VND 
           %tr
-            %td.text
-              Thuế
-            %td.value
-              0 VND
-          %tr
-            %td.text
-              Vận Chuyển
-            %td.value
-              Miễn Phí
-          %tr
-            %td.text
-              Thành Tiền
+            %td.text= t('cart.total')
             %td.value
               200,000 VND
       %a.btn.btn-primary{:href => "/checkout"}
         = fa_icon 'check'
-        THANH TOÁN
+        = t('cart.checkout').upcase

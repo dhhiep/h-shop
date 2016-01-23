@@ -7,5 +7,5 @@
 //= require select2
 //= require moment
 //= require plugins/loader
-//= require frontend/loader
-//= require frontend/main
+//= require backend/loader
+//= require backend/main

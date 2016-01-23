@@ -5,27 +5,29 @@
       .total-quantity
         2
     .cart-dropdown
-      %table.table.table-bordered.list-cart-items
+      %a.fa.fa-times.close-button{:href => "javascript:void(0)"}
+      %table.table.table-bordered.mini-cart-items
         - 3.times do 
           %tr
             %td{style: "width: 87px"}
               .thumb
-                .quantity 1
+                .quantity= rand(1..99)
                 = image_tag "product-thumb.jpg"
             %td.product-info
-              .name
+              %a.name{:href => "/"}
                 Máy ảnh Canon 5D
-              .unit-price
-                (39K)
+            %td
+              = "#{rand(99..150)}K"
             %td
               .action
-                .remove
-                = fa_icon "trash"
-      .info
-        = fa_icon "asterisk" 
-        Tổng cộng: 
-        %span 300,000 VND
-      .cart-action
+                %a.remove{:href => "javascript:void(0);"}
+                  = fa_icon "trash"
+        %tr.footer-info
+          %td.title{:colspan => 2}
+            = t('cart.subtotal')
+          %td
+            %span 300K
+      .cart-action.padding-bottom-5
         %a.button-checkout.btn{:href => "/checkout"}
-          = fa_icon "check" 
-          THANH TOÁN
+          = fa_icon "shopping-cart" 
+          %span.margin-left-5= t('header.cart').upcase

@@ -1,5 +1,6 @@
 vi:
   currency: 'K'
+  close: "Đóng"
   header:
     login: "Đăng Nhập"
     cart: "Giỏ Hàng"
@@ -7,6 +8,8 @@ vi:
   menu:
     search_place_holder: "Tìm sản phẩm ..."
   product:
+    name: 'Tên sản phẩm'
+    price: 'Giá'
     details: "MÔ TẢ SẢN PHẨM"
     product_images: "HÌNH ẢNH SẢN PHẨM"
     add_to_cart: "THÊM VÀO GIỎ"
@@ -14,3 +17,14 @@ vi:
     in_stock: "Còn Hàng"
     sold_out: "Hết Hàng"
     customer_comment: "Ý KIẾN KHÁCH HÀNG"
+  cart:
+    image: 'Hình ảnh'
+    quantity: 'Số lượng'
+    subtotal: 'Thành tiền'
+    total: 'Tổng cộng'
+    continue_shopping: 'Mua tiếp'
+    checkout: 'Thanh toán'
+    update: 'Cập nhật'
+    tax: 'Thuế'
+    shipping_cost: 'Phí vận chuyển'
+    remove: 'Xóa'
