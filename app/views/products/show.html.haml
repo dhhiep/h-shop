@@ -40,10 +40,11 @@
   #tab_comments.tab-pane{:role => "tabpanel"}
     .fb-comments{"data-colorscheme" => "light", "data-href" => "#{ original_url }", "data-numposts" => "5", "data-width" => "100%", "data-mobile" => "true", "data-order-by" => "time"}
 
-.clearfix
-= br(4)
+
 
 = content_for :extra_layout do
+  .clearfix
+  = br(4)
   #related-products
     .hr-title
       %span
