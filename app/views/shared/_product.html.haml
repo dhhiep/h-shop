@@ -1,6 +1,7 @@
 - product_discount = [true, false].sample
 - product_new = [true, false].sample
 - product_url = product_path(1)
+- product_name = FFaker::Product.product_name
 %div.product-item.wow.fadeInUp
   .product-image
     - if product_discount
@@ -23,10 +24,10 @@
             THÊM VÀO GIỎ
     = image_tag small_image_url, size: "240x240", class: 'product_photo'
   .caption
-    %a.categories{:href => "/categories/#{ Faker::Hacker.abbreviation }"}
-      = Faker::Hacker.abbreviation
-    %a.name{:href => "/products/#{ Faker::Name.name.humanize }"}
-      = Faker::Name.name.humanize
+    %a.categories{:href => "/categories/#{ FFaker::Product.brand.titleize }"}
+      = FFaker::Product.brand.titleize
+    %a.name{:href => "/products/#{ FFaker::Product.product_name.humanize }"}
+      = product_name.size < 23 ? product_name : "#{product_name[0..20]} ..."
     .rating.init{"data-score" => "#{ rand(0.0..5.0)}"}
     .price
       - if product_discount

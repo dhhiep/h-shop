@@ -17,6 +17,7 @@ vi:
     in_stock: "Còn Hàng"
     sold_out: "Hết Hàng"
     customer_comment: "Ý KIẾN KHÁCH HÀNG"
+    related: "Sản phẩm liên quan"
   cart:
     image: 'Hình ảnh'
     quantity: 'Số lượng'

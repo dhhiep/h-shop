@@ -6,4 +6,8 @@ module ApplicationHelper
   def original_url
     request.base_url + request.original_fullpath
   end
+
+  def br(count)
+    count.times.map{'<br/>'}.join('').html_safe
+  end
 end

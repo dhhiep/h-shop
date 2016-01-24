@@ -1,77 +1,69 @@
 - product_discount = [true, false].sample
 - product_new = [true, false].sample
 - available = [true, false].sample
-- product_name = Faker::Name.name
+- product_name = FFaker::Name.name
 %h1.page-title
   = product_name
 .product-details-page.row
-  .col-xs-5.main-image
-    - if product_discount
-      .save-off-banner
-        .wrap-banner
-          = image_tag('save-off.png')
-          .text-off
-            = "#{rand(20..80)}%"
-    = image_tag "products/product-1.jpg", class: "img-responsive"
-    %a.fancybox{:href => ""}
-    %a.fancybox{:href => image_url("products/product-1.jpg"), :rel => "gallery1", :title => product_name}
-      %span.fa.fa-expand
-  .col-xs-7
-    .product-name
-      = product_name
-    .rating.init{"data-score" => "#{ rand(0.0..5.0)}"}
-    .stock-status
-      = t('product.stock_status')
-      - if available
-        %span.available
-          = t('product.in_stock')
-      - else
-        %span.not-available
-          = t('product.sold_out')
-    .clearfix
-    .description
-      = Faker::Lorem.paragraph
-    .price
+  .col-xs-5
+    .main-image
       - if product_discount
-        .discount
-          = "#{ rand(100..999) }#{t('currency')}"
-      = "#{ rand(100..999) }#{t('currency')}"
-    .add-to-cart
-      %input.quantity{:type => "number", value: 1, disabled: !available}/
-      %button.btn.btn-primary{ disabled: !available }
-        = t('product.add_to_cart')
+        .save-off-banner
+          .wrap-banner
+            = image_tag('save-off.png')
+            .text-off
+              = "#{rand(20..80)}%"
+      = image_tag "products/product-1.jpg", class: "img-responsive img-main-image", "data-zoom-image" => image_path("products/product-1.jpg")
+      %a.fancybox{:href => ""}
+      %a.fancybox.expand-image{:href => image_url("products/product-1.jpg"), :rel => "gallery1", :title => product_name}
+        %span.fa.fa-expand
+    .thumbnails.owl-carousel
+      - 10.times do
+        - small_image_url = asset_url("products/product-#{rand(1..8)}.jpg")
+        - large_image_url = small_image_url
+        = link_to 'javascript:void(0);', "data-source" => large_image_url, class: 'thumbnail-item' do
+          = image_tag small_image_url, class: 'image'
+  .col-xs-7
+    = render 'variant_cart_form', :product_name => product_name, :available => available, :product_discount => product_discount
 
 %ul#product_details_tab.nav.nav-tabs{:role => "tablist"}
   %li.active{:role => "presentation"}
-    %a{"aria-controls" => "review", "data-toggle" => "tab", :href => "#review", :role => "tab"}= t('product.details')
+    %a{"aria-controls" => "review", "data-toggle" => "tab", :href => "#tab_details", :role => "tab"}= t('product.details')
   %li{:role => "presentation"}
-    %a{"aria-controls" => "images", "data-toggle" => "tab", :href => "#images", :role => "tab"}= t('product.product_images')
+    %a{"aria-controls" => "images", "data-toggle" => "tab", :href => "#tab_comments", :role => "tab"}= t('product.customer_comment')
 
 #product_details_tab_content.tab-content
-  #review.tab-pane.active{:role => "tabpanel"} 
-    Modi natus ratione nihil deserunt hic et molestias. Quam sit autem. Fugit veritatis qui id consectetur deserunt ut ut. Quo a porro quis repellat quibusdam nihil dolorum. 
-  #images.tab-pane{:role => "tabpanel"}
-    .owl-carousel
-      - 20.times do
-        - small_image_url = asset_url("products/product-#{rand(1..8)}.jpg")
-        - large_image_url = small_image_url
-        = link_to large_image_url, class: 'fancybox fancybox-zoom' do
-          = image_tag small_image_url, class: 'image'
-%ul.nav.nav-tabs{:role => "tablist", style: "margin-top: 50px"}
-  %li.active{:role => "presentation"}
-    %a{:href => "#"}
-      = t('product.customer_comment')
-.fb-comments{"data-colorscheme" => "light", "data-href" => "#{ original_url }", "data-numposts" => "5", "data-width" => "100%", "data-mobile" => "true", "data-order-by" => "time"}
+  #tab_details.tab-pane.active{:role => "tabpanel"} 
+    = FFaker::HTMLIpsum.p.html_safe
+    = FFaker::HTMLIpsum.ul_short.html_safe
+    = FFaker::HTMLIpsum.fancy_string.html_safe
+  #tab_comments.tab-pane{:role => "tabpanel"}
+    .fb-comments{"data-colorscheme" => "light", "data-href" => "#{ original_url }", "data-numposts" => "5", "data-width" => "100%", "data-mobile" => "true", "data-order-by" => "time"}
 
-:javascript
-  $(function () {
-    $('#product_details_tab a:first').tab('show')
+.clearfix
+= br(4)
 
-    (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.3&appId=1434833363500454";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-  })
+= content_for :extra_layout do
+  #related-products
+    .hr-title
+      %span
+        = fa_icon "link"
+        = t('product.related')
+    = render 'related_products'
+
+= content_for :extra_js do
+  :javascript
+    $(document).ready(function(){
+      $('#product_details_tab a:first').tab('show')
+      
+      setTimeout(function(){
+        (function(d, s, id) {
+          console.log('load')
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.3&appId=1434833363500454";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+      }, 300000)
+    })

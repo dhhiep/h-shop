@@ -3,11 +3,15 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  helper_method :content_layout, :show_slider?, :hide_breadcrumbs?
+  helper_method :content_layout, :show_slider?, :hide_breadcrumbs?, :show_page_loading?
 
 
   private
     def show_slider?
+      params[:controller] == "home" && params[:action] == "index"
+    end
+
+    def show_page_loading?
       params[:controller] == "home" && params[:action] == "index"
     end
 

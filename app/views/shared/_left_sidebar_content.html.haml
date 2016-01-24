@@ -6,11 +6,11 @@
     - product_new = [true, false].sample
     %li.mini-product.col-xs-12.col-md-12
       .left-column
-        = link_to "/products/#{ Faker::Name.name.humanize }", class: 'thumb' do
+        = link_to "/products/#{ FFaker::Name.name.humanize }", class: 'thumb' do
           = image_tag 'mini-products/1.jpg'
       .right-column
         .name
-          = Faker::Name.name
+          = FFaker::Name.name
         .rating.init{"data-score" => "#{ rand(0.0..5.0)}"}
         .price
           - if product_discount

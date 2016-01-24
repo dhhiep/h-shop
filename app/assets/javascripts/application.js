@@ -6,6 +6,7 @@
 //= require messenger-theme-flat
 //= require select2
 //= require moment
+//= require fancybox
 //= require plugins/loader
 //= require frontend/loader
 //= require frontend/main

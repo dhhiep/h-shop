@@ -1,0 +1,33 @@
+- product_discount = true
+.product-name
+  = product_name
+  .brand
+    by
+    = link_to FFaker::Product.brand.titleize, '' 
+.rating.init{"data-score" => "#{ rand(0.0..5.0)}"}
+.stock-status
+  = t('product.stock_status')
+  - if available
+    %span.available
+      = t('product.in_stock')
+  - else
+    %span.not-available
+      = t('product.sold_out')
+.clearfix
+.description
+  = FFaker::Lorem.paragraph
+.price
+  - if product_discount
+    .discount.margin-right-10
+      = "#{ rand(100..999) }#{t('currency')}"
+  = "#{ rand(100..999) }#{t('currency')}"
+.variants
+  %select.select2.full-width{:name => "varaint_id"}
+    - 10.times do |i|
+      %option{:value => "#{i}"}
+        = "Color: #{FFaker::Color.name.titleize} - Gender: #{FFaker::Gender.sample.titleize} - Model: #{FFaker::Product.model.titleize} - $#{rand(0..99)}"
+%br/
+.add-to-cart
+  %input.quantity{:type => "number", value: 1, disabled: !available}/
+  %button.btn.btn-primary{ disabled: !available }
+    = t('product.add_to_cart')

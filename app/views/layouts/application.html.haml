@@ -8,7 +8,7 @@
     = javascript_include_tag :modernizr
     = csrf_meta_tags
   %body
-    = render 'shared/page_loading'
+    = render 'shared/page_loading' if show_page_loading?
     = render 'shared/header'
     = render 'shared/slider' if show_slider?
     = render 'shared/breadcrumbs' unless hide_breadcrumbs?
@@ -16,6 +16,8 @@
       #main-content
         = render layout: content_layout do
           = yield
+        = yield :extra_layout
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = yield :extra_js
     = render 'shared/footer'
     = render "shared/back_to_top"
