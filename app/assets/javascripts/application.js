@@ -2,6 +2,7 @@
 //= require jquery_ujs
 //= require jquery.turbolinks
 //= require bootstrap-sprockets
+//= require underscore
 //= require messenger
 //= require messenger-theme-flat
 //= require select2

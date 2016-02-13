@@ -29,3 +29,28 @@ vi:
     tax: 'Thuế'
     shipping_cost: 'Phí vận chuyển'
     remove: 'Xóa'
+  address:
+    billing_address: "Địa chỉ thanh toán"
+    shipping_address: "Địa chỉ nhận hàng"
+    first_name_and_last_name: 'Họ và tên'
+    first_name: 'Tên'
+    last_name: 'Họ'
+    address1: 'Địa chỉ'
+    address2: 'Địa chỉ khác'
+    state: 'Tỉnh/Thành phố'
+    zipcode: 'Mã bưu điện'
+    city: 'Quận/Huyện'
+    country: 'Quốc gia'
+    phone1: 'Số điện thoại'
+    phone2: 'Số điện thoại khác'
+    email: 'Địa chỉ Email'
+    same_shipping: 'Giống địa chỉ nhận hàng'
+  validator:
+    first_name_and_last_name: 'Họ và tên không được phép để trống và không chứa kí tự đặc biệt'
+    address1: 'Địa chỉ không được phép để trống'
+    state: 'Tỉnh/Thành phố không được phép để trống'
+    zipcode: 'Mã bưu điện không được phép để trống'
+    city: 'Quận/Huyện không được phép để trống'
+    country: 'Quốc Gia không được phép để trống'
+    phone1: 'Số điện thoại không được phép để trống'
+    email: 'Email phải chứa các ký tự @ và "." (Ex: my_name@example.com)'

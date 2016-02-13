@@ -1,1 +1,22 @@
-checkout
+= form_for :order, url: '' do |f|
+  .row
+    .col-sm-6
+      %h1.page-title
+        = t('address.shipping_address')
+      .margin-top-35{:style => "display: inline-block;"}
+      #shipping_address_area
+        = render 'addresses/form', :f => f, :address_type => :ship_address_attributes, :email => true
+    .col-sm-6
+      %h1.page-title
+        = t('address.billing_address')
+      .form-group
+        = f.check_box :same_shipping, :id => "same_shipping"
+        %label.margin-left-5{:for => "same_shipping"}= t('address.same_shipping')
+      #billing_address_area
+        = render 'addresses/form', :f => f, :address_type => :bill_address_attributes
+
+  %hr/
+  Payment
+  = radio_button(:order, :payment, "rails")
+  = radio_button(:order, :payment, "java")
+  = f.submit "OK"

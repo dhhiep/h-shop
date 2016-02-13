@@ -27,6 +27,10 @@ gem 'fancybox2-rails'
 gem 'slim'
 gem 'acts_as_shopping_cart'
 gem 'friendly_id'
+gem 'underscore-rails'
+gem 'jquery-form-validator-rails'
+gem 'icheck-rails'
+gem 'countries', :require => 'countries/global'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

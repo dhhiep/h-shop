@@ -7,4 +7,4 @@ Rails.application.config.assets.version = '1.0'
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
 
-Rails.application.config.assets.precompile += %w( bx_loader.gif controls.png )
+Rails.application.config.assets.precompile += %w( bx_loader.gif controls.png icheck/minimal/green.png icheck/minimal/green@2x.png)

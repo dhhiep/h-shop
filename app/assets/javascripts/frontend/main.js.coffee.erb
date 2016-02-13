@@ -2,6 +2,22 @@ window.onload = ->
   $('#page_loading').addClass('animated fadeOutUp')
 
 $(document).ready ->
+  $.validate
+    validateOnBlur : true
+    showHelpOnFocus : true
+    addSuggestions : true
+    language: form_validator_i18n.vi
+    borderColorOnError: '#a94442'
+    validationRuleAttribute: 'data-v'
+    validationErrorMsgAttribute: 'data-em'
+
+  $("input:not('.not-icheck')").iCheck
+    checkboxClass: 'icheckbox_minimal-green'
+    radioClass: 'iradio_minimal-green'
+    increaseArea: '20%'
+
+  $("select:not('.not-select2')").select2()
+
   Messenger.options =
     extraClasses: 'messenger-fixed messenger-on-bottom messenger-on-right'
     theme: 'flat'
