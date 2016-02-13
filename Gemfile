@@ -31,6 +31,7 @@ gem 'underscore-rails'
 gem 'jquery-form-validator-rails'
 gem 'icheck-rails'
 gem 'countries', :require => 'countries/global'
+gem 'exception_notification'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

@@ -85,6 +85,9 @@ GEM
     dotenv-rails (2.0.0)
       dotenv (= 2.0.0)
     erubis (2.7.0)
+    exception_notification (4.1.4)
+      actionmailer (~> 4.0)
+      activesupport (~> 4.0)
     execjs (2.4.0)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
@@ -273,6 +276,7 @@ DEPENDENCIES
   countries
   devise
   dotenv-rails
+  exception_notification
   factory_girl_rails
   fancybox2-rails
   ffaker
