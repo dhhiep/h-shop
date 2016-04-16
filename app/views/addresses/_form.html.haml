@@ -1,36 +1,40 @@
 - country_alpha = local_assigns.fetch :country_alpha, ENV['DEFAULT_COUNTRY']
+- simple = local_assigns.fetch :simple, true
 - country = Country[country_alpha] 
 
 = f.fields_for address_type do |address_form|
   .form-group
-    = address_form.label t('address.first_name_and_last_name')
+    = address_form.label :address2, t('address.first_name_and_last_name')
     = address_form.text_field :first_name_and_last_name, :class => 'form-control', :data => {:v => "required", :em => t('validator.first_name_and_last_name'), :field => :first_name_and_last_name}
   .form-group
-    = address_form.label t('address.address1')
+    = address_form.label :address2, t('address.address1')
     = address_form.text_field :address1, :class => 'form-control', :data => {:v => "required", :em => t('validator.address1'), :field => :address1}
-  .form-group
-    = address_form.label t('address.address2')
-    = address_form.text_field :address2, :class => 'form-control', :data => {:field => :address2}
+  - unless simple
+    .form-group
+      = address_form.label :address2, t('address.address2')
+      = address_form.text_field :address2, :class => 'form-control', :data => {:field => :address2}
   - if country == 'US'
     .form-group
-      = address_form.label t('address.zipcode')
+      = address_form.label :address2, t('address.zipcode')
       = address_form.text_field :zipcode, :class => 'form-control', :data => {:v => "required", :em => t('validator.zipcode'), :field => :zipcode}
   .form-group
-    = address_form.label t('address.city')
+    = address_form.label :city, t('address.city')
     = address_form.text_field :city, :class => 'form-control', :data => {:v => "required", :em => t('validator.city'), :field => :city}
   .form-group
-    = address_form.label t('address.state')
+    = address_form.label :address2, t('address.state')
     = address_form.select :state, country.states.to_a.map{|s| [s[1]["name"], s[0]]}, :class => 'form-control', :data => {:v => "required", :em => t('validator.state'), :field => :state}
-  .form-group
-    = address_form.label t('address.country')
+  - unless simple
+    .form-group
+      = address_form.label :address2, t('address.country')
     = address_form.select :country, ISO3166::Country.translations.to_a.map{|s| [s[1], s[0]]}, :selected => country_alpha, :class => 'form-control', :data => {:v => "required", :em => t('validator.country'), :field => :country}
   .form-group
-    = address_form.label t('address.phone1')
+    = address_form.label :address2, t('address.phone1')
     = address_form.text_field :phone1, :class => 'form-control', :data => {:v => "required", :em => t('validator.phone1'), :field => :phone1}
-  .form-group
-    = address_form.label t('address.phone2')
+  - unless simple
+    .form-group
+      = address_form.label :address2, t('address.phone2')
     = address_form.text_field :phone2, :class => 'form-control', :data => {:field => :phone2}
   - if defined?(email)
     .form-group
-      = address_form.label t('address.email')
+      = address_form.label :address2, t('address.email')
       = address_form.text_field :email, :class => 'form-control', :data => {:v => "required email", :em => t('validator.email'), :field => :email}

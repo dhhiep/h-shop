@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     collection do
       get :cart
       post :cart
-      get :checkout
+      match 'checkout(/:step)', :action => :checkout, :as => :checkout, via: [:get, :post]
       post :place_order
       get "transaction/:id/completed" => :completed, as: :completed
     end

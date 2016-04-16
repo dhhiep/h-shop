@@ -25,6 +25,20 @@ window.compare_and_copy_shipping_billing_address_fields = ->
 $(document).ready ->
   check_same_shipping_address()
 
+  $('input[name="order[login_method]"]').on 'ifChanged', (event) ->
+    if event.target.value == 'guest'
+      $('.login_method_guest_area input').prop('disabled', false)
+      $('.login_method_account_area input').prop('disabled', true)
+    else
+      $('.login_method_account_area input').prop('disabled', false)
+      $('.login_method_guest_area input').prop('disabled', true)
+
+  $('input[name="order[payment_methods]"]').on 'change', ->
+    $('#payment_method_area .payment_method_block').removeClass('active')
+    $(@).parents('.payment_method_block').addClass('active')
+    $('#payment_method_area .contents > div').fadeOut()
+    $('.' + $(@).parents('label').data('content')).fadeIn()
+
   $('#same_shipping').on 'ifChanged', (event) ->
     check_same_shipping_address()
 

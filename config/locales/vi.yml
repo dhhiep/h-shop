@@ -1,4 +1,10 @@
 vi:
+  g:
+    product: 'Sản phẩm'
+    image: 'Hình ảnh'
+    quantity: 'Số lượng'
+    price: 'Giá'
+    password: "Mật khẩu"
   currency: 'K'
   close: "Đóng"
   header:
@@ -19,19 +25,23 @@ vi:
     customer_comment: "Ý KIẾN KHÁCH HÀNG"
     related: "Sản phẩm liên quan"
   cart:
+    product: 'Sản phẩm'
     image: 'Hình ảnh'
     quantity: 'Số lượng'
     subtotal: 'Thành tiền'
     total: 'Tổng cộng'
-    continue_shopping: 'Mua tiếp'
+    continue_shopping: 'Tiếp tục mua hàng'
+    process_checkout: 'Tiến hành thanh toán'
     checkout: 'Thanh toán'
+    place_order: 'Đặt hàng'
     update: 'Cập nhật'
     tax: 'Thuế'
     shipping_cost: 'Phí vận chuyển'
     remove: 'Xóa'
+    include_vat: "Đã bao gồm VAT"
   address:
     billing_address: "Địa chỉ thanh toán"
-    shipping_address: "Địa chỉ nhận hàng"
+    shipping_address: "Địa chỉ giao hàng"
     first_name_and_last_name: 'Họ và tên'
     first_name: 'Tên'
     last_name: 'Họ'
@@ -54,3 +64,18 @@ vi:
     country: 'Quốc Gia không được phép để trống'
     phone1: 'Số điện thoại không được phép để trống'
     email: 'Email phải chứa các ký tự @ và "." (Ex: my_name@example.com)'
+  checkout:
+    address: "Địa chỉ giao hàng"
+    login: 'Đăng nhập'
+    payment_methods: 'Phương thức thanh toán'
+    order_address: 'Địa chỉ giao hàng/Thanh toán'
+    order_summary: 'Thông tin đơn hàng'
+    continue: 'Tiếp tục'
+    next_login: 'Tiếp tục'
+    next_address: 'Tiếp tục'
+    next_payment: 'Đặt hàng'
+    step_login: "Đăng nhập"
+    step_address: "Địa chỉ"
+    step_payment: "Thanh toán"
+    login_method_account: 'Tôi đã có tài khoản'
+    login_method_guest: 'Đặt hàng mà không cần đăng ký'

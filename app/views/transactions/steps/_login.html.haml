@@ -1,0 +1,25 @@
+%h1.page-title.s18x.no-space
+  = t('checkout.login')
+#login_area.margin-top-30.margin-bottom-15
+  .login_method_guest_area
+    .row.margin-bottom-15
+      .col-md-8.col-md-offset-2
+        = f.label :email, t('g.email')
+        = f.text_field :email, :class => 'form-control', :data => {:v => "required email", :em => t('validator.email'), :field => :email}
+  .row.margin-bottom-5
+    .col-md-8.col-md-offset-2
+      = f.radio_button :login_method, 'guest', :checked => true
+      = f.label :login_method_guest, t('checkout.login_method_guest'), :class => "margin-left-5"
+  .row.margin-bottom-15
+    .col-md-8.col-md-offset-2
+      = f.radio_button :login_method, 'account'
+      = f.label :login_method_account, t('checkout.login_method_account'), :class => "margin-left-5"
+  .login_method_account_area
+    .row.margin-bottom-15
+      .col-md-8.col-md-offset-2
+        = f.label :email, t('g.email')
+        = f.text_field :email, :class => 'form-control', :data => {:v => "required email", :em => t('validator.email'), :field => :email}, :disabled => true
+    .row
+      .col-md-8.col-md-offset-2
+        = f.label :password, t('g.password')
+        = f.password_field :password, :class => 'form-control', :data => {:v => "required", :field => :password}, :disabled => true

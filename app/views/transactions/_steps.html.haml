@@ -1,0 +1,11 @@
+- steps = {"login" => 1, "address" => 2, "payment" => 3}
+- step_name = local_assigns.fetch :step_name, 'login'
+- step = steps[step_name].to_i
+
+%ol.steps
+  %li.step1{:class => "#{step >= 1 ? "current" : "" }"}
+    %span= t('checkout.step_login')
+  %li.step2{:class => "#{step >= 2 ? "current" : "" }"}
+    %span= t('checkout.step_address')
+  %li.step3{:class => "#{step >= 3 ? "current" : "" }"}
+    %span= t('checkout.step_payment')

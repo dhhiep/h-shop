@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     end
 
     def hide_breadcrumbs?
-      params[:controller] == "home" && params[:action] == "index"
+      ['home#index'].include?(page_id) || %w(transactions).include?(controller_name)
     end
 
     def collection?
@@ -25,5 +25,9 @@ class ApplicationController < ActionController::Base
 
     def content_layout
       @content_layout ||= 'layouts/content_layouts/right_sidebar'
+    end
+
+    def page_id
+      "#{controller_name}##{action_name}"
     end
 end

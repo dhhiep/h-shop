@@ -1,0 +1,25 @@
+%h1.page-title.s18x.no-space
+  = t('checkout.payment_methods')
+#payment_method_area.padding-top-15.padding-bottom-15
+  .payment_method_block.active
+    = f.label "payment_methods_1", :data => {:content => 'content_1'}do
+      = fa_icon 'money', :style => "font-size: 17px; margin-right: 5px;"
+      Thanh toán khi nhận hàng
+      = f.radio_button :payment_methods, 1, :checked => true, :class => 'not-icheck hide'
+    = fa_icon 'check', :class => 'tick'
+  .payment_method_block.visa
+    = f.label "payment_methods_2", :data => {:content => 'content_2'} do
+      = image_tag "credit_cards.png"
+      = f.radio_button :payment_methods, 2, :class => 'not-icheck hide'
+    = fa_icon 'check', :class => 'tick'
+
+  .contents
+    .content_1
+      %p Quý khách sẽ thanh toán bằng tiền mặt khi nhận hàng tại nhà
+      %p
+        Lưu ý:
+        %ul
+          %li Quý khách kiểm tra kỹ thông tin đơn hàng bên tay phải về địa chỉ giao hàng, sản phẩm & số lượng, giá trị thành tiền.
+          %li Thông tin này sẽ không thể thay đổi sau khi đơn hàng được xác nhận thành công.
+    .content_2
+      %p Comming Soon

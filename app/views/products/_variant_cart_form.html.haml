@@ -28,6 +28,10 @@
         = "Color: #{FFaker::Color.name.titleize} - Gender: #{FFaker::Gender.sample.titleize} - Model: #{FFaker::Product.model.titleize} - $#{rand(0..99)}"
 %br/
 .add-to-cart
-  %input.quantity{:type => "number", value: 1, disabled: !available}/
-  %button.btn.btn-primary{ disabled: !available }
+  .quantity
+    %select{:name => ""}
+      %option{:value => "1"} 1
+      %option{:value => "2"} 2
+      %option{:value => "3"} 3
+  %button.btn.btn-primary
     = t('product.add_to_cart')

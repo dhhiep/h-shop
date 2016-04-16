@@ -1,52 +1,45 @@
-%h1.page-title
-  = t('header.cart')
-= form_for cart_transactions_path, html: { id: "cart_page" } do
-  %table.table.table-striped.table-bordered.table-hover.table-responsive
-    %thead
-      %tr
-        %th= t('cart.image')
-        %th= t('product.name') 
-        %th= t('product.price')
-        %th= t('cart.quantity')
-        %th= t('cart.subtotal')
-        %th= t('cart.remove')
-    %tbody
-      - 5.times do
-        %tr
-          %td
-            = link_to product_path(1) do
-              = image_tag 'mini-products/1.jpg', size: '55x55'
-          %td{ style: 'text-align: left;'}
-            = link_to "Integer consequat ante lectus", product_path(1)
-          %td
-            50,000 VND
-          %td
-            %input.quantity{:type => "number", value: 1, :min => 0}
-          %td
-            50,000 VND
-          %td
-            %a.remove-form-cart{:href => "javascript:void(0)"}
-              %i.fa.fa-trash
-  .row.cart-action
-    .col-xs-12.col-sm-8
-      %a.btn.btn-primary.pull-left{href: "/"}
-        = fa_icon 'shopping-cart'
+.row
+  .col-md-7
+    .form-wrapper
+      %h1.page-title.s18x.no-space
+        = t('header.cart')
+      = form_for cart_transactions_path, html: { id: "cart_page" } do
+        .no-space
+          %table.table
+            %thead
+              %tr
+                %th= t('cart.image')
+                %th= t('product.name') 
+                %th= t('product.price')
+                %th{:style => "width: 90px;"}= t('cart.quantity')
+                %th= t('cart.subtotal')
+                %th= t('cart.remove')
+            %tbody
+              - 5.times do
+                %tr
+                  %td
+                    = link_to product_path(1) do
+                      = image_tag 'mini-products/1.jpg', size: '55x55'
+                  %td{ style: 'text-align: left;'}
+                    = link_to "Integer consequat ante lectus", product_path(1)
+                  %td
+                    50,000 VND
+                  %td
+                    %select.select2.no-search{:name => ""}
+                      %option{:value => "1"} 1
+                      %option{:value => "1"} 2
+                      %option{:value => "1"} 3
+                  %td
+                    50,000 VND
+                  %td
+                    %a.remove-form-cart{:href => "javascript:void(0)"}
+                      %i.fa.fa-trash
+    .cart-action
+      %a.button-default.pull-left{href: "/"}
+        = fa_icon 'shopping-cart', :class => 'left'
         = t('cart.continue_shopping').upcase
-      %button.btn.btn-primary.pull-right
-        = fa_icon 'refresh'
-        = t('cart.update').upcase
-
-    .col-xs-12.col-sm-4
-      %table.summary.table.table-striped.table-bordered.table-hover.table-responsive
-        %tbody
-          %tr
-            %td.text= t('cart.subtotal')
-            %td.value
-              200,000 VND 
-          %tr
-            %td.text= t('cart.total')
-            %td.value
-              200,000 VND
-      %a.btn.btn-primary{:href => "/checkout"}
-        = fa_icon 'check'
-        = t('cart.checkout').upcase
+  .col-md-5
+    = render 'transactions/order_summary', :line_items => false
+    %a.button-default.full-block.pull-right{:href => "/checkout"}
+      = fa_icon 'check', :class => 'left'
+      = t('cart.process_checkout').upcase

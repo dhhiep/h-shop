@@ -1,7 +1,17 @@
 window.onload = ->
   $('#page_loading').addClass('animated fadeOutUp')
 
+window.select2_init = ->
+  $("select.select2_init").select2
+    minimumResultsForSearch: Infinity
+
+  $("select.select2_init.with_search").select2
+    minimumResultsForSearch: 0
+
+
 $(document).ready ->
+  window.select2_init()
+
   $.validate
     validateOnBlur : true
     showHelpOnFocus : true
@@ -48,8 +58,6 @@ $(document).ready ->
     else
       $('#scroll_to_top').fadeOut()
 
-  $('.select2').select2()
-  
   # wow = new WOW(
   #   boxClass: "wow" # animated element css class (default is wow)
   #   animateClass: "animated" # animation css class (default is animated)

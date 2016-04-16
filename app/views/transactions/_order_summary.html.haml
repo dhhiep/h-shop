@@ -1,0 +1,48 @@
+- line_items = local_assigns.fetch :line_items, :true
+
+.form-wrapper.address
+  %h1.page-title.s18x.no-space
+    = t('checkout.order_address')
+  %p.margin-bottom-10 ĐINH HOÀNG HIỆP
+  %div 13C/KA Đường Vào Ga - Hưng Long
+  %div Đồng Nai - Huyện Trảng Bom
+  %div Điện thoại di động: 01285286828
+
+.checkout_mini_cart.order-details.padding-bottom-0.form-wrapper
+  %h1.page-title.s18x.no-space
+    = t('checkout.order_summary')
+  .no-space
+    %table.table
+      - if line_items
+        %thead
+          %tr
+            %th.product-name
+              = t('g.product')
+            %th.quantity
+              = t('g.quantity')
+            %th.price
+              = t('g.price')
+      %tbody
+        - if line_items
+          - 3.times do 
+            %tr
+              %td.product-name
+                %a{:href => ""}
+                  Cá voi hồng phun nước Toyroyal 7178 (Hồng) 
+              %td.quantity
+                %select.select2.no-search{:name => ""}
+                  %option{:value => "1"} 1
+                  %option{:value => "1"} 2
+                  %option{:value => "1"} 3
+              %td.price
+                9.000.000 
+        %tr.shipping-cost
+          %td.title Phí vẫn chuyển
+          %td.value.text-right{:colspan => 2} Miễn phí
+        %tr.subtotal
+          %td.title
+            = t('cart.subtotal')
+            .vat_des
+              = "(#{t('cart.include_vat')})"
+          %td.value{:colspan => 2} 906.000 VND
+

@@ -1,0 +1,4 @@
+%h1.page-title.s18x.no-space
+  = t('checkout.address')
+#shiping_address_area
+  = render 'addresses/form', :f => f, :address_type => :ship_address_attributes
