@@ -1,5 +1,6 @@
 vi:
   g:
+    order: "Đơn hàng"
     product: 'Sản phẩm'
     image: 'Hình ảnh'
     quantity: 'Số lượng'
@@ -68,7 +69,7 @@ vi:
     address: "Địa chỉ giao hàng"
     login: 'Đăng nhập'
     payment_methods: 'Phương thức thanh toán'
-    order_address: 'Địa chỉ giao hàng/Thanh toán'
+    order_address: 'Địa chỉ giao hàng'
     order_summary: 'Thông tin đơn hàng'
     continue: 'Tiếp tục'
     next_login: 'Tiếp tục'
@@ -79,3 +80,8 @@ vi:
     step_payment: "Thanh toán"
     login_method_account: 'Tôi đã có tài khoản'
     login_method_guest: 'Đặt hàng mà không cần đăng ký'
+  complete:
+    thank_you_order_placed: Đơn hàng của bạn đã được đặt thành công
+    order_number: 'Mã đơn hàng'
+    order_details: 'Chi tiết đơn hàng'
+    thank_you_long_message: 'Cảm ơn bạn đã đặt hàng của chúng tôi. Nhân viên của chúng tôi sẽ liên hệ để xác nhận đơn hàn của bạn trong thời gian sớm nhất. Xin cảm ơn.'

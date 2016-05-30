@@ -1,1 +1,25 @@
-competed
+#complete_page
+  .complete_page_title= t('complete.thank_you_order_placed')
+  %div
+    = "#{t('complete.order_number')}# : R786380477" 
+  %div= t('complete.thank_you_long_message')
+  %br/
+  %br/
+  .row
+    .col-xs-8
+      %h1.page-title.s18x.no-space.complete_order_info_title
+        = t('complete.order_details')
+      .checkout_mini_cart.order-details.padding-bottom-0.form-wrapper
+        %table.table
+          %thead
+            %tr
+              %th.product-name
+                = t('g.product')
+              %th.quantity
+                = t('g.quantity')
+              %th.price
+                = t('g.price')
+          %tbody
+            = render 'transactions/table_line_items', :order => @order, :editable => false
+    .col-xs-4
+      = render 'transactions/order_summary', :line_items => false

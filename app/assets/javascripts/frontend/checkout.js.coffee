@@ -23,6 +23,10 @@ window.compare_and_copy_shipping_billing_address_fields = ->
   ), 2000)
 
 $(document).ready ->
+  window.setTimeout((->
+    $($('input[name="order[payment_methods]"]').get(0)).trigger('change')
+  ), 2000)
+  
   check_same_shipping_address()
 
   $('input[name="order[login_method]"]').on 'ifChanged', (event) ->
