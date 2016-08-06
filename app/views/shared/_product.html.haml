@@ -1,7 +1,6 @@
-- product_discount = [true, false].sample
-- product_new = [true, false].sample
-- product_url = product_path(1)
-- product_name = FFaker::Product.product_name
+- variant = product.variants.first
+- product_discount = variant.cost_price > variant.price
+- product_url = product_path(product)
 %div.product-item.wow.fadeInUp
   .product-image
     - if product_discount
@@ -9,7 +8,7 @@
         .wrap-banner
           = image_tag('save-off.png')
           .text-off
-            = "#{rand(20..80)}%"
+            = "#{ (((variant.cost_price - variant.price) * 100)/variant.cost_price).round }%"
     - small_image_url = asset_url("products/product-#{rand(1..8)}.jpg")
     - large_image_url = small_image_url
     = link_to '', product_url, class: "black-layer"
@@ -24,13 +23,13 @@
             THÊM VÀO GIỎ
     = image_tag small_image_url, size: "240x240", class: 'product_photo'
   .caption
-    %a.categories{:href => "/categories/#{ FFaker::Product.brand.titleize }"}
+    %a.categories{:href => "/categories/"}
       = FFaker::Product.brand.titleize
-    %a.name{:href => "/products/#{ FFaker::Product.product_name.humanize }"}
-      = product_name.size < 23 ? product_name : "#{product_name[0..20]} ..."
+    %a.name{:href => product_url}
+      = product.name.size < 23 ? product.name : "#{product.name[0..20]} ..."
     .rating.init{"data-score" => "#{ rand(0.0..5.0)}"}
     .price
       - if product_discount
         .discount
-          = "#{ rand(100..999) }#{t('currency')}"
-      = "#{ rand(100..999) }#{t('currency')}"
+          = "#{ variant.cost_price.round }#{t('currency')}"
+      = "#{ variant.price.round }#{t('currency')}"

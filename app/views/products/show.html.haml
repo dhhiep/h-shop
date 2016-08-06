@@ -1,9 +1,8 @@
-- product_discount = [true, false].sample
-- product_new = [true, false].sample
 - available = [true, false].sample
-- product_name = FFaker::Name.name
+- variant = @product.variants.first
+- product_discount = variant.cost_price > variant.price
 %h1.page-title
-  = product_name
+  = @product.name
 .product-details-page.row
   .col-xs-5
     .main-image
@@ -12,10 +11,10 @@
           .wrap-banner
             = image_tag('save-off.png')
             .text-off
-              = "#{rand(20..80)}%"
+              = "#{ (((variant.cost_price - variant.price) * 100)/variant.cost_price).round }%"
       = image_tag "products/product-1.jpg", class: "img-responsive img-main-image", "data-zoom-image" => image_path("products/product-1.jpg")
       %a.fancybox{:href => ""}
-      %a.fancybox.expand-image{:href => image_url("products/product-1.jpg"), :rel => "gallery1", :title => product_name}
+      %a.fancybox.expand-image{:href => image_url("products/product-1.jpg"), :rel => "gallery1", :title => @product.name}
         %span.fa.fa-expand
     .thumbnails.owl-carousel
       - 10.times do
@@ -24,7 +23,7 @@
         = link_to 'javascript:void(0);', "data-source" => large_image_url, class: 'thumbnail-item' do
           = image_tag small_image_url, class: 'image'
   .col-xs-7
-    = render 'variant_cart_form', :product_name => product_name, :available => available, :product_discount => product_discount
+    = render 'variant_cart_form', :product => @product, :variant => variant, :product_name => @product.name, :available => available, :product_discount => product_discount
 
     %ul#product_details_tab.nav.nav-tabs{:role => "tablist"}
       %li.active{:role => "presentation"}
@@ -50,7 +49,7 @@
       %span
         = fa_icon "link"
         = t('product.related')
-    = render 'related_products'
+    = render 'related_products', :products => @product_related
 
 = content_for :extra_js do
   :javascript

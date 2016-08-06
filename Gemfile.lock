@@ -59,6 +59,10 @@ GEM
     byebug-color-printer (0.1.0)
       byebug (~> 4.0)
     cancancan (1.10.1)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -96,7 +100,7 @@ GEM
       railties (>= 3.0.0)
     fancybox2-rails (0.2.8)
       railties (>= 3.1.0, < 5.0)
-    ffaker (2.1.0)
+    ffaker (2.2.0)
     flickraw (0.9.8)
     font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
@@ -137,6 +141,7 @@ GEM
     messengerjs-rails (1.4.1)
     method_source (0.8.2)
     mime-types (2.4.3)
+    mimemagic (0.3.1)
     mini_portile (0.6.2)
     minitest (5.5.1)
     modernizr-rails (2.7.1)
@@ -155,6 +160,12 @@ GEM
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
+    paperclip (5.0.0)
+      activemodel (>= 4.2.0)
+      activesupport (>= 4.2.0)
+      cocaine (~> 0.5.5)
+      mime-types
+      mimemagic (~> 0.3.0)
     pg (0.18.1)
     polyamorous (1.1.0)
       activerecord (>= 3.0)
@@ -196,6 +207,7 @@ GEM
       activesupport (>= 3.0)
       i18n
       polyamorous (~> 1.1)
+    ratyrate (1.2.2.alpha)
     rdoc (4.2.0)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
@@ -282,7 +294,7 @@ DEPENDENCIES
   ffaker
   flickraw
   font-awesome-rails
-  friendly_id
+  friendly_id (~> 5.1.0)
   haml
   icheck-rails
   jbuilder (~> 2.0)
@@ -293,10 +305,12 @@ DEPENDENCIES
   messengerjs-rails
   modernizr-rails
   momentjs-rails
+  paperclip
   pg
   pry
   rails (= 4.2)
   ransack
+  ratyrate
   rspec-rails
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

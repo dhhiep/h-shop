@@ -37,7 +37,7 @@ Rails.application.configure do
   #
   BetterErrors::Middleware.allow_ip! ENV['TRUSTED_IP'] if ENV['TRUSTED_IP']
   # TRUSTED_IP=66.68.96.220 rails s
-
+  
   config.action_mailer.default_options = {from: 'support@hshop.com'}  
  
   config.action_mailer.delivery_method = :smtp

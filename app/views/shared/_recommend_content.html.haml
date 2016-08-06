@@ -5,5 +5,5 @@
       Sản phẩm nổi bật
 
   #product-items.owl-carousel
-    - 20.times do
-      = render "shared/product"
+    - @hot_products.each do |product|
+      = render "shared/product", :product => product

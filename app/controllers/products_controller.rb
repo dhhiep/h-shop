@@ -5,6 +5,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @product = Product.friendly.find(params[:id])
+    @product_related = Product.limit(10)
   end
 
   private

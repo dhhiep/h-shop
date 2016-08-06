@@ -26,12 +26,14 @@ gem 'momentjs-rails'
 gem 'fancybox2-rails'
 gem 'slim'
 gem 'acts_as_shopping_cart'
-gem 'friendly_id'
 gem 'underscore-rails'
 gem 'jquery-form-validator-rails'
 gem 'icheck-rails'
 gem 'countries', :require => 'countries/global'
 gem 'exception_notification'
+gem "paperclip"
+gem 'ratyrate'
+gem 'friendly_id', '~> 5.1.0'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -75,9 +77,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem "ffaker"
-
 group :development, :test do
+  gem "ffaker"
   gem "spring"
   gem "pry"
   gem "byebug"

@@ -1,4 +1,3 @@
-- product_discount = true
 .product-name
   = product_name
   .brand
@@ -19,13 +18,13 @@
 .price
   - if product_discount
     .discount.margin-right-10
-      = "#{ rand(100..999) }#{t('currency')}"
-  = "#{ rand(100..999) }#{t('currency')}"
+      = "#{ variant.cost_price.round }#{t('currency')}"
+  = "#{ variant.price.round }#{t('currency')}"
 .variants
   %select.select2.full-width{:name => "varaint_id"}
-    - 10.times do |i|
-      %option{:value => "#{i}"}
-        = "Color: #{FFaker::Color.name.titleize} - Gender: #{FFaker::Gender.sample.titleize} - Model: #{FFaker::Product.model.titleize} - $#{rand(0..99)}"
+    - product.variants.each do |variant|
+      %option{:value => "#{variant.id}"}
+        = variant.options_text
 %br/
 .add-to-cart
   .quantity
