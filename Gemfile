@@ -77,8 +77,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# MUST MOVE TO DELOPMENT WHEN SITE GO LIVE
+gem "ffaker"
+
 group :development, :test do
-  gem "ffaker"
   gem "spring"
   gem "pry"
   gem "byebug"
