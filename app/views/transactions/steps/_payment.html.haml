@@ -7,7 +7,7 @@
       Thanh toán khi nhận hàng
       = f.radio_button :payment_methods, 1, :checked => true, :class => 'not-icheck hide'
     = fa_icon 'check', :class => 'tick'
-  .payment_method_block.visa
+  .payment_method_block.visa.disabled
     = f.label "payment_methods_2", :data => {:content => 'content_2'} do
       = image_tag "credit_cards.png"
       = f.radio_button :payment_methods, 2, :class => 'not-icheck hide'

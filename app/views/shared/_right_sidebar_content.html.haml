@@ -1,21 +1,23 @@
 %h1.page-title.double
-  Nổi bật
+  = t('g.highlight')
 %ul.mini-products.row
-  - 10.times do
-    - product_discount = [true, false].sample
-    - product_new = [true, false].sample
+  - highlight_products.each do |product|
+    - variant = product.variants.first
+    - image = variant.images.first
+    - product_url = product_path(product)
     %li.mini-product.col-xs-12.col-md-12
       .left-column
-        = link_to "/products/#{ FFaker::Name.name.humanize }", class: 'thumb' do
-          = image_tag 'mini-products/1.jpg'
+        - mini_image_url = image ? image.attachment(:small) : image_url("noimage/mini.png")
+        = link_to product_url, class: 'thumb' do
+          = image_tag mini_image_url
       .right-column
         .name
-          = FFaker::Name.name
+          = link_to truncate(product.name, length: 25, omission: ' ...'), product_url
         .rating.init{"data-score" => "#{ rand(0.0..5.0)}"}
         .price
-          - if product_discount
+          - if variant.discount?
             .discount
-              = "#{ rand(100..999) }K"
-          = "#{ rand(100..999) }K"
+              = variant.display_cost_price
+          = variant.display_price
 
 

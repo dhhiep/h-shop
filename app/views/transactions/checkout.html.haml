@@ -7,7 +7,7 @@
         = render "transactions/steps/#{params[:step]}", :f => f
       .clearfix
       %hr.margin-top-0
-      %button.button-default.pull-right
+      %button.button-default.pull-right.submit-checkout
         = "#{t("checkout.next_#{params[:step]}").upcase}"
         %span.arrow-right.fa.fa-angle-right
       .clearfix

@@ -34,6 +34,8 @@ gem 'exception_notification'
 gem "paperclip"
 gem 'ratyrate'
 gem 'friendly_id', '~> 5.1.0'
+gem 'aws-sdk'
+gem 'money'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

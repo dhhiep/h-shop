@@ -6,6 +6,7 @@ vi:
     quantity: 'Số lượng'
     price: 'Giá'
     password: "Mật khẩu"
+    highlight: 'Nổi bật'
   currency: 'K'
   close: "Đóng"
   header:

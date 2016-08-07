@@ -2,5 +2,6 @@
   - products.in_groups_of(4).each do |block_products|
     .row.line-product-item
       - block_products.each do |product|
+        - next unless product
         .col-xs-6.col-sm-6.col-md-3.col-lg-3
           = render "shared/product", :product => product

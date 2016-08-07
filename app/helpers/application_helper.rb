@@ -10,4 +10,12 @@ module ApplicationHelper
   def br(count)
     count.times.map{'<br/>'}.join('').html_safe
   end
+
+  def highlight_products
+    Product.order('id DESC').limit(10)
+  end
+
+  def default_currency
+    ENV['CURRENCY'] || 'USD'
+  end
 end

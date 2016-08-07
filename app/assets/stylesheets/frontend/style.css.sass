@@ -34,6 +34,10 @@ input, .form-control
     padding-right: 10px
     width: 20%
 
+*:disabled
+  opacity: 0.6
+  cursor: not-allowed !important
+
 .owl-carousel
   .owl-item
     display: inline-block
@@ -755,12 +759,13 @@ h1.page-title
       .thumb
         img
           width: 68px
-          max-height: 75px
     .right-column
       .name
         font-size: 14px
         font-weight: 600
         margin-bottom: 4px
+        a
+          color: #4C4C4C
       .rating
         margin-bottom: 6px
       .price

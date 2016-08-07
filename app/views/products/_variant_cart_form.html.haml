@@ -1,12 +1,12 @@
 .product-name
-  = product_name
+  = product.name
   .brand
     by
     = link_to FFaker::Product.brand.titleize, '' 
 .rating.init{"data-score" => "#{ rand(0.0..5.0)}"}
 .stock-status
   = t('product.stock_status')
-  - if available
+  - if variant.in_stock?
     %span.available
       = t('product.in_stock')
   - else
@@ -14,12 +14,12 @@
       = t('product.sold_out')
 .clearfix
 .description
-  = FFaker::Lorem.paragraph
+  = variant.product.short_description.html_safe
 .price
-  - if product_discount
+  - if variant.discount?
     .discount.margin-right-10
-      = "#{ variant.cost_price.round }#{t('currency')}"
-  = "#{ variant.price.round }#{t('currency')}"
+      = variant.display_cost_price
+  = variant.display_price
 .variants
   %select.select2.full-width{:name => "varaint_id"}
     - product.variants.each do |variant|

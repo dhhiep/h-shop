@@ -25,7 +25,7 @@ window.compare_and_copy_shipping_billing_address_fields = ->
 $(document).ready ->
   window.setTimeout((->
     $($('input[name="order[payment_methods]"]').get(0)).trigger('change')
-  ), 2000)
+  ), 1000)
   
   check_same_shipping_address()
 
@@ -39,9 +39,16 @@ $(document).ready ->
 
   $('input[name="order[payment_methods]"]').on 'change', ->
     $('#payment_method_area .payment_method_block').removeClass('active')
-    $(@).parents('.payment_method_block').addClass('active')
+    payment_method_block = $(@).parents('.payment_method_block')
+    payment_method_block.addClass('active')
     $('#payment_method_area .contents > div').fadeOut()
     $('.' + $(@).parents('label').data('content')).fadeIn()
+
+    if payment_method_block.hasClass('disabled')
+      $('.submit-checkout').attr('disabled', true)
+    else
+      $('.submit-checkout').attr('disabled', false)
+
 
   $('#same_shipping').on 'ifChanged', (event) ->
     check_same_shipping_address()

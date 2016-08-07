@@ -1,43 +1,40 @@
-- available = [true, false].sample
-- variant = @product.variants.first
-- product_discount = variant.cost_price > variant.price
+- variant_default = @product.variants.first
 %h1.page-title
   = @product.name
 .product-details-page.row
   .col-xs-5
     .main-image
-      - if product_discount
+      - if variant_default.discount?
         .save-off-banner
           .wrap-banner
             = image_tag('save-off.png')
             .text-off
-              = "#{ (((variant.cost_price - variant.price) * 100)/variant.cost_price).round }%"
-      = image_tag "products/product-1.jpg", class: "img-responsive img-main-image", "data-zoom-image" => image_path("products/product-1.jpg")
+              = variant_default.discount_percent
+      - image = variant_default.images.first
+      - large_image_url = image ? image.attachment(:large) : image_url("noimage/large.png")
+      = image_tag large_image_url, class: "img-responsive img-main-image", "data-zoom-image" => large_image_url
       %a.fancybox{:href => ""}
-      %a.fancybox.expand-image{:href => image_url("products/product-1.jpg"), :rel => "gallery1", :title => @product.name}
+      %a.fancybox.expand-image{:href => large_image_url, :rel => "gallery1", :title => @product.name}
         %span.fa.fa-expand
     .thumbnails.owl-carousel
-      - 10.times do
-        - small_image_url = asset_url("products/product-#{rand(1..8)}.jpg")
-        - large_image_url = small_image_url
-        = link_to 'javascript:void(0);', "data-source" => large_image_url, class: 'thumbnail-item' do
-          = image_tag small_image_url, class: 'image'
+      - variant_default.images.each do |image|
+        = link_to 'javascript:void(0);', "data-source" => image.attachment(:product), class: 'thumbnail-item' do
+          = image_tag image.attachment(:small), class: 'image'
   .col-xs-7
-    = render 'variant_cart_form', :product => @product, :variant => variant, :product_name => @product.name, :available => available, :product_discount => product_discount
+    = render 'variant_cart_form', :product => @product, :variant => variant_default
 
-    %ul#product_details_tab.nav.nav-tabs{:role => "tablist"}
-      %li.active{:role => "presentation"}
-        %a{"aria-controls" => "review", "data-toggle" => "tab", :href => "#tab_details", :role => "tab"}= t('product.details')
-      %li{:role => "presentation"}
-        %a{"aria-controls" => "images", "data-toggle" => "tab", :href => "#tab_comments", :role => "tab"}= t('product.customer_comment')
+= br(2)
+%ul#product_details_tab.nav.nav-tabs{:role => "tablist"}
+  %li.active{:role => "presentation"}
+    %a{"aria-controls" => "review", "data-toggle" => "tab", :href => "#tab_details", :role => "tab"}= t('product.details')
+  %li{:role => "presentation"}
+    %a{"aria-controls" => "images", "data-toggle" => "tab", :href => "#tab_comments", :role => "tab"}= t('product.customer_comment')
 
-    #product_details_tab_content.tab-content
-      #tab_details.tab-pane.active{:role => "tabpanel"} 
-        = FFaker::HTMLIpsum.p.html_safe
-        = FFaker::HTMLIpsum.ul_short.html_safe
-        = FFaker::HTMLIpsum.fancy_string.html_safe
-      #tab_comments.tab-pane{:role => "tabpanel"}
-        .fb-comments{"data-colorscheme" => "light", "data-href" => "#{ original_url }", "data-numposts" => "5", "data-width" => "100%", "data-mobile" => "true", "data-order-by" => "time"}
+#product_details_tab_content.tab-content
+  #tab_details.tab-pane.active{:role => "tabpanel"} 
+    = @product.description.html_safe.present? ? @product.description.html_safe : @product.short_description.html_safe
+  #tab_comments.tab-pane{:role => "tabpanel"}
+    .fb-comments{"data-colorscheme" => "light", "data-href" => "#{ original_url }", "data-numposts" => "5", "data-width" => "100%", "data-mobile" => "true", "data-order-by" => "time"}
 
 
 
